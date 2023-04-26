@@ -6,12 +6,13 @@
 # Purpose:                      To Ops this Challenge
 
 # Declaration of variables
-print("I am working perfectly")
+var="I am working perfectly"
 # Declaration of functions
 
 
 # Main:                          
-print("Hello World")
+echo "Hello World"
+echo $var
 
 
 
