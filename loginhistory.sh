@@ -10,15 +10,9 @@ var="This is the login history"
 # Declaration of functions
 last 
     
-
 # Main:                          
 last
 last
 last
 echo $var
-
-
-
-
-
 # End
