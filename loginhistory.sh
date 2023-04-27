@@ -8,15 +8,14 @@
 # Declaration of variables
 var="This is the login history"
 # Declaration of functions
-print () {
-    last
-    echo $var
-}
+last 
+    
 
 # Main:                          
-print ()
-print ()
-print ()
+last
+last
+last
+echo $var
 
 
 
