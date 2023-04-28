@@ -7,21 +7,25 @@
 #                               Reference the array variable to create a new .txt file in each directory
 
 # Declaration of variables
-#Put the names of the four directories in an array
-group=("dir" "dir1" "dir2" "dir3")
+# Put the names of the four directories in an array
+bigbox=(/home/ben142/ops-201d8-code-challenges/dir1  /home/ben142/ops-201d8-code-challenges/dir2 /home/ben142/ops-201d8-code-challenges/dir3 /home/ben142/ops-201d8-code-challenges/dir4)
+
 
 # Declaration of functions
 #Creates four directories: dir1, dir2, dir3, dir4
-new=mkdir {dir}
-#Reference the array variable to create a new .txt file in each directory
-createm=touch newtextfile.txt ${group[0-3]}
+mkdir_new () { 
+  mkdir dir1
+  mkdir dir2
+  mkdir dir3
+  mkdir dir4
+  touch ${bigbox[0]}/paper.txt 
+  touch ${bigbox[1]}/paper.txt 
+  touch ${bigbox[2]}/paper.txt 
+  touch ${bigbox[3]}/paper.txt 
+}
+# Reference the array variable to create a new .txt file in each directory
 
 # Main:                          
-echo new 
-echo new
-echo new
-echo new
-
-createm
+mkdir_new
 
 # End
