@@ -8,17 +8,31 @@
 
 
 # Declaration of variables
-# Put the names of the four directories in an array
 
 
 # Declaration of functions
-#Creates four directories: dir1, dir2, dir3, dir4
-mkdir_new () { 
-  mkdir dir1
-  touch ${bigbox[3]}/paper.txt 
+run_joshua () {
+# write a script that displays running processes
+ps aux
+# asks the user for a PID
+echo "What PID number would you like to choose?"
+read var1
+# kills the process with that PID
+kill $var1
+echo "Thank you Professor Falken, PID $var1 has been destroyed. Resuming DEFCON1"
+# Loops (while loop) back to step 1 and continues until user exits with Ctrl + C
+while [1=1]
+do
+ps aux
+echo "What PID number would you like to choose?"
+read var1
+kill $var1
+echo "Thank you Professor Falken, PID $var1 has been destroyed. Resuming DEFCON1"
+done
+echo "An interesting game. The only winning move is not to play. How about a nice game of chess?"
 }
-# Reference the array variable to create a new .txt file in each directory
 
 # Main:                          
+run_joshua
 
 # End
