@@ -10,26 +10,25 @@
 
 # Declaration of variables
 filebox=(var0++ )
-var0=var0
 
 
 # Declaration of functions
 
-if test -f $var0 ;
+if test -f $varfilename ;
  then 
 
  echo "File is already there"
  else
 
  echo "File is around is somewhere... Hold on..."
- touch $var0
+ touch var1filename
  ls -a
  echo "Here it is. Found it."
 fi
 
 
 print_notsure () {
- while [ "x${var1}" > x0 ] 
+while [ "x${var1}" > x0 ] 
  do
     ls
     echo "How many are there?"
@@ -40,10 +39,22 @@ done
 echo "Okay fine, but I'm telling him that it's your fault."
 }
 
-
-
 # Main:                          
+echo "What are you looking for?"
 
+read varfilename
+
+if test -f $varfilename ;
+ then 
+
+ echo "File is already there"
+ else
+
+ echo "File is around is somewhere... Hold on..."
+ touch var1filename
+ ls -a
+ echo "Here it is. Found it."
+fi
 
 
 
