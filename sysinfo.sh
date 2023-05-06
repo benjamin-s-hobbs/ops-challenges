@@ -17,8 +17,9 @@ mynet=*-network
 # Declaration of functions
 
 sudo_var1 () {
-
- sudo lshw -C cpu | grep -v firmware | grep -v version: | grep -v capabilities: 
+ 
+ hostname
+ sudo lshw -C cpu | grep -v description: | grep -v vendor: | grep -v physicalid: | grep -v version: | grep -v date: | grep -v size: | grep -v capacity:| grep -v capabilities: 
  sudo lshw -C memory  
  sudo lshw -C display | grep -v version:
  sudo lshw -C network

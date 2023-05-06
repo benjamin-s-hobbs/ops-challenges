@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script Name:                  Ops Challenge: Class05
+# Script Name:                  Ops Challenge: Class06 (ifthengo.sh)
 # Author:                       Ben Hobbs
 # Date of latest revision:      05/1/2023
 # Purpose:                      Create a script that detects if a file or directory exists, then creates it if it does not exist.
