@@ -20,13 +20,13 @@
 # Clearly indicate with comments each component below.
 
 # Print to the terminal screen all active processes ordered by highest CPU time consumption at the top.
-
+Get-Process | Sort-Object CPU -Descending
 
 # Print to the terminal screen all active processes ordered by highest Process Identification Number at the top.
-
+Get-Process | Sort-Object ID -Descending
 
 # Print to the terminal screen the top five active processes ordered by highest Working Set (WS(K)) at the top.
-
+Get-Process | Select-Object -First 5 | Sort-Object WorkingSet64 -Descending
 
 # Start a browser process (such as Google Chrome or MS Edge) and have it open https://owasp.org/www-project-top-ten/.
 
@@ -35,10 +35,11 @@
 
 
 # Close all instances of the Notepad.
+Stop-Process -Name "Notepad" -PassThru
 
-
-# Kill a process by its Process Identification Number. Choose a process whose termination won’t destabilize the system, such as Google Chrome or MS Edge.
-
+# Kill a process by its Process Identification Number. Choose a process whose termination won’t destabilize the system, 
+#such as Google Chrome or MS Edge.
+Stop-Process -Id 5667 -Confirm -PassThru
 
 
 # End
