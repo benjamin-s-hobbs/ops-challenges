@@ -1,8 +1,8 @@
-#Eventloggin 
-#Windows Batch Scripting
+# Eventloggin 
+# Windows Batch Scripting
 
 # Script Name:                  Ops Challenge: Class09
-#Author:                       Ben Hobbs
+# Author:                       Ben Hobbs
 # Date of latest revision:      05/04/2023
 # Purpose:                      Write a set of Powershell commands that fetch useful System event logs 
 #                               and include language appropriate syntax and file extensions.
