@@ -31,14 +31,16 @@ Get-Process | Select-Object -First 5 | Sort-Object WorkingSet64 -Descending
 Start-Process -FilePath $home\Microsoft\Edge\msedge.exe -Verb Open https://owasp.org/www-project-top-ten/
 
 # Start the process Notepad ten times using a for loop.
-
+for ($i = 1 ; $i -le 10 ; $i++)
+{
+    Start-Process notepad
+}
 
 # Close all instances of the Notepad.
 Stop-Process -Name "Notepad" -PassThru
 
-# Kill a process by its Process Identification Number. Choose a process whose termination won’t destabilize the system, 
+# Kill a process by its Process Identification Number. Choose a process whose termination won’t destabilize the system
 #such as Google Chrome or MS Edge.
 Stop-Process -Id 5667 -Confirm -PassThru
-
 
 # End
