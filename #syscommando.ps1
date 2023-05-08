@@ -28,7 +28,7 @@ Get-Process | Sort-Object ID -Descending
 Get-Process | Select-Object -First 5 | Sort-Object WorkingSet64 -Descending
 
 # Start a browser process (such as Google Chrome or MS Edge) and have it open https://owasp.org/www-project-top-ten/.
-
+Start-Process -FilePath $home\Microsoft\Edge\msedge.exe -Verb Open https://owasp.org/www-project-top-ten/
 
 # Start the process Notepad ten times using a for loop.
 
