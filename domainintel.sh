@@ -10,7 +10,7 @@
 
 # Declaration of variables
 # Take a user input string. Presumably the string is a domain name such as Google.com.
-string1="www.amazon.com"
+string1="www.google.com"
 
 # Declaration of functions
 print_OSINT () {
