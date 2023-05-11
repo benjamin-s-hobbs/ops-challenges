@@ -9,11 +9,28 @@
 
 
 # Declaration of variables
-
+# Take a user input string. Presumably the string is a domain name such as Google.com.
+string1="www.amazon.com"
 
 # Declaration of functions
+print_OSINT () {
 
+#Run whois against a user input string.
+whois $string1 >> ~/ops-201d8-code-challenges/OSINT1.txt
+
+#Run dig against the user input string.
+dig $string1 >> ~ops-201d8-code-challenges/OSINT1.txt
+
+#Run host against the user input string.
+host $string1 >> ~/ops-201d8-code-challenges/OSINT1.txt
+
+#Run nslookup against the user input string.
+nslookup $string1 >> ~/ops-201d8-code-challenges/OSINT1.txt
+
+}
 
 # Main:                          
+
+print_OSINT
 
 # End
