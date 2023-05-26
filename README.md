@@ -1,13 +1,13 @@
-# ops-201d8-code-challenges
+# ops-challenges
 README.md
 
 ## What is this repo all about? 
 
-This repository is all about my first foray into the world of scripting, gitn' down with ACP, and first touches with languages and coding. Here is where I pushed my commits that I added that were assigned to familiarize me with working with GitHub, VS Code, Connecting to a host via SSH, virtual machines, 
+This repository is all about my first foray into the world of scripting, gitn' down with ACP, and first touches with languages and coding. Here is where I pushed my commits that I added that were assigned to familiarize me with working with GitHub, VS Code, Connecting to a host via SSH, virtual machines, and many other things as I jumped into the world of scripts, code, and Markdown (oh my). I've renamed this repo to ops-challenges (from ops-201d8-code-challenges) as a commitment to myself to complete courses 201/301/and401 to complete my training. This repo will showcase all of that progress, as I continue to learn, hone, and refine my expanding skillset.
 
 ## Why are you learning these skills?
 
-To learn how to be a Cybersecurity Engineer. Full Stop. From there, I'll have the skills to move however I'm needed in this field. Ideally, my plan is to start out as an analyst in a SOC, honing and sharpening my Blue Team knowledge, because the world needs a lot of that at the moment. As I do that, I'll train in Red Team methodologies to better understand what it is like. This will enhance my Blue Team knowledge and inspire me to create some tools that I better defend with. Then having perfected my Form III, Form II, and Form VII I'll become Purple, which is my goal.
+To learn how to be a Cybersecurity Engineer. Full Stop. From there, I'll have the skills to move however I'm needed in this field. Ideally, my plan is to start out as an analyst in a SOC, honing and sharpening my Blue Team knowledge, because the world needs a lot of that at the moment. As I do that, I'll train in Red Team methodologies to better understand what it is like to attack targets from the outside. This will enhance my Blue Team knowledge and inspire me to create some tools that I can better defend with. Then having perfected my Form III, Form II, and Form VII I'll become Purple, which is my goal. #IYKYK
 
 ## What fundamental concepts did you learn in Ops 201?
 
