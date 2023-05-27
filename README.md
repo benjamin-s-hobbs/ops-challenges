@@ -19,6 +19,10 @@ To learn how to be a Cybersecurity Engineer. Full Stop. From there, I'll have th
 
 * Root Cause Analysis
 
+## What fundamental concepts did you learn in Ops 301?
+
+* Python
+
 ## What was your favorite Ops Challenge assignment and why?
 
 This one, because I reflect on what I have learned in this course and why I am here in the first place. 
@@ -39,4 +43,4 @@ Seriously, I intend to do just that. I'm going to go back and improve them all
 
 I hope to improve my Creativity in creating functions and using variables. I will improve my documentation of what the script does in the script. I will also become more comfortable in using the keyboard shortcuts that make the editing so smooth and easy to do. I will continue to build good habits that I'll carry with me into my career.
 
-
+## What would you like to explore more about?
