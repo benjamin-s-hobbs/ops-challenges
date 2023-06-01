@@ -10,12 +10,19 @@
 
 # Declaration of variables
 
-
+now=$()
 
 # Declaration of functions
 
+save_syslog{
 
-# Main:                          
+cp var/log/syslog ~/cwd/syslog_now    
+}
 
+# Main: 
+
+save_syslog
+
+echo copied syslog_
 
 # End
