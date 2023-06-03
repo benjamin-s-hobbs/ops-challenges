@@ -28,10 +28,11 @@ echo and what permissions do you want to give read$varpath?
 echo "Okay, let's do it..."
 chmod $varpath
 # Prints to the screen the directory contents and the new permissions settings of everything in the directory.
-cat 
+cat $varpath
 }
 
 # Main:                          
 
+ch_perms
 
 # End
