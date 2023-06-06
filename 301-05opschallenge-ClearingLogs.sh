@@ -16,32 +16,36 @@
 
 # Declaration of variables
 
-varlogfat1=(~/var/log/syslog)
-varlogfat2=(~/var/log/wtmp)
-varlogbk=(~/var/log/backups/$varwhen)
+varlogfat1=(/var/log/syslog)
+varlogfat2=(/var/log/wtmp)
+varlogbk=(/var/log/backups/$varwhen)
 varwhen=(date +"syslog-%Y%m%d%H%M%S")
 
 # Declaration of functions
 
 fade_away() {
-
-# Print to the screen the file size of the log files before compression
-ls -lh * $varlogfat1
-ls -lh * $varlogfat2
- 
-# Compress the contents of the log files listed below to a backup directory
-# The file name should contain a time stamp with the following format -YYYYMMDDHHMMSS
-# Example: /var/log/backups/syslog-20220928081457.zip
-zip $varlogfat1 >> ~/$varlogbk
-zip $varlogfat2 >> ~/$varlogbk
-
-# Clear the contents of the log file
-truncate -s 0 ~/$varlogfat1
-truncate -s 0 ~/$varlogfat2
-
-# Print to screen the file size of the compressed file
-ls -lh * ~/$varlogbk
+ # Print to the screen the file size of the log files before compression
+ ls -lh * $varlogfat1
+ ls -lh * $varlogfat2
+ echo "this is before"
+ # Compress the contents of the log files listed below to a backup directory
+ # The file name should contain a time stamp with the following format -YYYYMMDDHHMMSS
+ # Example: /var/log/backups/syslog-20220928081457.zip
+ zip $varlogfat1 >> /$varlogbk
+ zip $varlogfat2 >> /$varlogbk
+ echo "zip them up nice"
+ # Clear the contents of the log file
+ truncate -s 0 /$varlogfat1
+ truncate -s 0 /$varlogfat2
+ echo "cover those tracks"
+ # Print to screen the file size of the compressed file
+ ls -lh * /$varlogbk
+ echo "here are some lighter footprints"
 
 }
+
+# Main
+
+fade_away
 
 # End
