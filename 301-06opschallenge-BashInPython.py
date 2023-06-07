@@ -32,9 +32,10 @@ sys_specs = os.system("lshw -short")
 
 # Main:
                      
-print(s_off,"\n",addys,"\n",sys_specs >> itisme.txt)
-print(itisme.txt)
-os.remove(itisme.txt)
+print(s_off) 
+print(addys)
+print(sys_specs)
+
 
 
 # End
