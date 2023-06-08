@@ -18,11 +18,14 @@ import os
 # How to call a variable
 #   print(greeting)
 
-
+userpath = input("What filepath would you like to see? ")
+varpath = os.walk(userpath)
 
 # Declaration of functions
 
 
+print("use" + userpath +", correct?")
+print(varpath)
 
 
 # Main:
