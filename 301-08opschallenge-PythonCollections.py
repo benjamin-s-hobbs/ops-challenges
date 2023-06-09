@@ -20,13 +20,18 @@ import os
 # How to call a variable
 #   print(greeting)
 
-
+# Assign to a variable a list of ten string elements.
+LaEspada = ["Yammy", "Aaroniero", "Granz", "Grimmjow", "Nnoitra", "Uliquiorra", "Hallibel", "Baraggan", "Stark", "Aizen"]
 
 # Declaration of functions
 
-
-
-
+# Print the fourth element of the list.
+print(LaEspada[3])
+# Print the sixth through tenth element of the list.
+print(LaEspada[5:10])
+# Change the value of the seventh element to “onion”
+LaEspada[6] = "Nel-onion"
+print(LaEspada)
 
 # Main:
                      
