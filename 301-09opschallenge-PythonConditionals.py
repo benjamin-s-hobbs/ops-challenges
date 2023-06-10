@@ -60,3 +60,27 @@ elif crowd > 10000:
 
 
 # End
+
+# Nested if statement
+if wind == "strong":
+  print("It's a windy day.")
+  if pollen_count > 70:
+    print("It's windy and a high pollen count! Ah-choo!")
+  elif pollen_count <= 70 and pollen_count > 30:
+    print("Careful out there, it's windy with a moderate pollen count.")
+  else:
+    print("No worries, it may be windy but there is a low pollen count today.")
+elif wind == "weak":
+  print("The wind is calm today.")
+else:
+  print("Wind conditions are unknown.")
+
+# Complex logical conditions
+if forecast == "rain" or wind == "strong":
+  print("The weather is too severe to be outside today!")
+elif temperature > 75 and humidity > 70:
+  print("It's hot and humid! Yuck!'")
+elif not forecast == "rain" and temperature <= 50:
+  print("This sounds like a perfect day.")
+else:
+  print("Weather conditions are unknown.")
