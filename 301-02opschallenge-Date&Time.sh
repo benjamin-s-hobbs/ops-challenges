@@ -10,19 +10,20 @@
 
 # Declaration of variables
 
-now=$()
+now=(syslog_date +%Y%m%d-%H%M)
 
 # Declaration of functions
 
 save_syslog{
 
-cp var/log/syslog ~/cwd/syslog_now    
+touch ~/syslog301/$now
+cp var/log/syslog ~/cwd/syslog301/$now    
 }
 
 # Main: 
 
 save_syslog
 
-echo copied syslog_
+echo copied $now
 
 # End
