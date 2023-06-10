@@ -11,7 +11,7 @@
 # Declaration of variables
 
 now=(date +%Y%m%d-%H%M)
-filenow=(syslog_>>$now)
+filenow=(syslog_$now)
 
 # Declaration of functions
 
