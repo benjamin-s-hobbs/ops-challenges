@@ -28,7 +28,7 @@ while true; do
     echo "2. Ping Self"
     echo "3. Print IP info"
     echo "4. Exit"
-    read choice
+    read -p "choice"
 
     if[[ $choice==1 ]]; then
         echo "Hello World!"
@@ -40,14 +40,14 @@ while true; do
 
     elif[[ $choice==3 ]]; then
         ifconfig
-        read-p "Press Enter to continue"
+        read -p "Press Enter to continue"
        
     elif[[ $choice==4 ]]; then
         echo "No problem, come back soon please!"
         exit0
     else
-        echo"Invalid choice"
-        read-p "Press Enter to continue"
+        echo "Invalid choice"
+        read -p "Press Enter to continue"
     fi
 done
 }
