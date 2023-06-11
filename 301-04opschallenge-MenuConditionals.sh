@@ -35,7 +35,7 @@ while true; do
         read -p "Press Enter to continue"
 
     elif[[ $choice==2 ]]; then
-        ping 127.0.0.1
+        ping "127.0.0.1"
         read -p "Press Enter to continue"
 
     elif[[ $choice==3 ]]; then
