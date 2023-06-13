@@ -38,7 +38,17 @@ print(f.read(12))
 os.remove("testfile.txt")
 
 # Main:
-                     
+
+# create a Python script that creates a new .txt file
+open("testfile.txt", "w")
+# appends three lines
+with open("testfile.txt", "a") as file:
+    file.write(intro)
+# prints to the screen the first line
+f = open("testfile.txt", "r")
+print(f.read(12))
+# then deletes the .txt file.
+os.remove("testfile.txt")                    
 
 
 
