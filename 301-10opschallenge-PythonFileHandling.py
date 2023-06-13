@@ -19,7 +19,7 @@ import os
 
 
 # create a Python script that creates a new .txt file
-f = open("~/ops-challenges/301challenges/testdir/testfile.txt", "w")
+f = open("testfile.txt", "w")
 
 # appends three lines
 intro = ["Hello World \n", "I'm new here \n", "I think I can do this though \n", "Look at me go World! \n"]
@@ -27,15 +27,15 @@ intro = ["Hello World \n", "I'm new here \n", "I think I can do this though \n",
 # Declaration of functions
 
 # create a Python script that creates a new .txt file
-open("~/ops-challenges/301challenges/testdir/testfile.txt", "w")
+open("testfile.txt", "w")
 # appends three lines
-with open("~/ops-challenges/301challenges/testdir/testfile.txt", "a") as file:
+with open("testfile.txt", "a") as file:
     file.write(intro)
 # prints to the screen the first line
-f = open("~/ops-challenges/301challenges/testdir/testfile.txt", "r")
+f = open("testfile.txt", "r")
 print(f.read(12))
 # then deletes the .txt file.
-os.remove("~/ops-challenges/301challenges/testdir/testfile.txt")
+os.remove("testfile.txt")
 
 # Main:
                      
