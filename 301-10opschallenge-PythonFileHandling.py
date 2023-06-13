@@ -18,26 +18,24 @@ import os
 #   print(greeting)
 
 
+# create a Python script that creates a new .txt file
+f = open("~/ops-challenges/301challenges/testdir/testfile.txt", "w")
+
+# appends three lines
+intro = ["Hello World \n", "I'm new here \n", "I think I can do this though \n", "Look at me go World! \n"]
 
 # Declaration of functions
 
-# Create a new file if it does not exist
-f = open("demofile.txt", "w")
-
-# How to open a file
-f = open("demofile.txt")
-
-# How to open a file and read it
-f = open("demofile.txt", "r")
-print(f.read())
-
-# How to return the five first characters of a file
-f = open("demofile.txt", "r")
-print(f.read(5))
-
-# Close a file when you're finished
-f = open("demofile.txt", "r")
-print(f.readline())
+# create a Python script that creates a new .txt file
+open("~/ops-challenges/301challenges/testdir/testfile.txt", "w")
+# appends three lines
+with open("~/ops-challenges/301challenges/testdir/testfile.txt", "a") as file:
+    file.write(intro)
+# prints to the screen the first line
+f = open("~/ops-challenges/301challenges/testdir/testfile.txt", "r")
+print(f.read(12))
+# then deletes the .txt file.
+os.remove("~/ops-challenges/301challenges/testdir/testfile.txt")
 
 # Main:
                      
