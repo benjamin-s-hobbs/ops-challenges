@@ -19,7 +19,9 @@
 
 # References:                   https://www.geeksforgeeks.org/psutil-module-in-python/
 
-# Import Libraries:
+# Import Libraries: 
+# use this to import libraries in a virtual environment>>>  "python3 -m pip install <LIBRARY NAME> --upgrade"
+
 import psutil
 
 
