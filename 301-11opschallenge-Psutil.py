@@ -35,7 +35,7 @@ import psutil
 # Declaration of functions:
 
 
-print(psutil.cpu_times(user))
+print(psutil.cpu_times())
 
 
 # Main:
