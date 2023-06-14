@@ -34,8 +34,8 @@ import psutil
 
 # Declaration of functions:
 
-psutil.cpu_times(user, system, idle, nice, iowait, irq, softirq, steal, guest)
-    print(user /n, system /n, idle /n, nice /n, iowait /n, irq /n, softirq /n, steal /n, guest /n)
+psutil.cpu_times(User)
+print(user /n, system /n, idle /n, nice /n, iowait /n, irq /n, softirq /n, steal /n, guest /n)
 
 # Main:
 
