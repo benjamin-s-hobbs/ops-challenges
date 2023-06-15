@@ -24,6 +24,9 @@
 #                               For the given URL, print response header information to the screen.
 
 # References:
+# https://realpython.com/python-requests/
+# https://realpython.com/python-f-strings/
+# 
 
 # Import Libraries
 # use this to import libraries in a virtual environment>>>  "python3 -m pip install <LIBRARY NAME> --upgrade"
@@ -46,7 +49,10 @@ optionsr = requests.options('https://api.github.com')
 
 # Declaration of functions
 
-
+if response.status_code == 200:
+    print('Success!')
+elif response.status_code == 404:
+    print('Not Found.')
 
 
 # Main:
