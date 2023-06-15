@@ -18,16 +18,16 @@
 #                               Prints to the screen the entire request your script is about to send. 
 #                               Ask the user to confirm before proceeding.
 #                               Using the requests library, performs a request against the destination URL with the 
-#                               HTTP Method selected by the user. For the given header, translate the codes into 
-#                               plain terms that print to the screen; for example, a 404 error should print Site 
-#                               not found to the terminal instead of 404. For the given URL, print response header
-#                               information to the screen.
+#                               HTTP Method selected by the user. 
+#                               For the given header, translate the codes into plain terms that print to the screen; 
+#                               for example, a 404 error should print "Site not found" to the terminal instead of 404.
+#                               For the given URL, print response header information to the screen.
 
 # References:
 
 # Import Libraries
 # use this to import libraries in a virtual environment>>>  "python3 -m pip install <LIBRARY NAME> --upgrade"
-
+import requests
 
 # Declaration of variables
 # How to declare a variable in python
@@ -35,13 +35,34 @@
 # How to call a variable
 #   print(greeting)
 
+gogetr = requests.get('https://api.github.com')
+postr = requests.post('https://api.github.com')
+gogetr = requests.put('https://api.github.com')
+deleter = requests.delete('https://api.github.com')
+headr = requests.head('https://api.github.com')
+patchr = requests.patch('https://api.github.com')
+optionsr = requests.options('https://api.github.com')
 
 
 # Declaration of functions
 
 
+
+
 # Main:
 
+#  Prints to the screen the entire request your script is about to send. 
+
+#  Ask the user to confirm before proceeding.
+
+#  Using the requests library, performs a request against the destination URL with the 
+
+#  HTTP Method selected by the user. 
+
+#  For the given header, translate the codes into plain terms that print to the screen; 
+#  for example, a 404 error should print "Site not found" to the terminal instead of 404.
+
+#  For the given URL, print response header information to the screen.
                  
 
 # End
