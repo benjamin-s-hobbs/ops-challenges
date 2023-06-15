@@ -49,9 +49,9 @@ optionsr = requests.options('https://api.github.com')
 
 # Declaration of functions
 
-if response.status_code == 200:
+if gogetr.status_code == 200:
     print('Success!')
-elif response.status_code == 404:
+elif gogetr.status_code == 404:
     print('Not Found.')
 
 
