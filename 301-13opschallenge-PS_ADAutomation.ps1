@@ -6,38 +6,38 @@
 #
 # Declaration of variables:
 
-varnewname=("Franz Ferdinand")
-vartitle=("TPS Reporting Lead")
-varcompany=("GlobeX USA")
-vardept=("TPS Department")
-varwhere=("Springfield, OR")
-varemail=("ferdi@GlobeXpower.com")
+$VarNewName = "Franz Ferdinand"
+$VarTitle = "TPS Reporting Lead"
+$VarCompany = "GlobeX USA"
+$VarDept = "TPS Department"
+$VarWhere = "Springfield, OR"
+$VarEmail = "ferdi@GlobeXpower.com"
 
 #
 #
 # Declaration of functions:
 #
 
-GlobexNewguy_(function) {
+function Get-GlobexNewGuy {
 
-# echo "Ok, let's add you to the system."
-# echo "What's your full name? (First Name, Last Name)"
+# Write-Output "Ok, let's add you to the system."
+# Write-Output "What's your full name? (First Name, Last Name)"
 # read=varnewname
-# echo "What's your title?"
+# Write-Output "What's your title?"
 # read=vartitle
-# echo "What company are you with?"
+# Write-Output "What company are you with?"
 # read=varcompany
-# echo "Department?"
+# Write-Output "Department?"
 # read=vardept
-# echo "Where will your location be?"
+# Write-Output "Where will your location be?"
 # read=varwhere
-# echo "And what will your email address be?"
+# Write-Output "And what will your email address be?"
 # read=varemail
 
 New-ADUser -Name $varnewname -OtherAttributes @{'title'=$vartitle;'EmailAddress'=$varemail;'City'=$varwhere;'Company'=$varcompany;'Department'=$vardept}
 
-echo "New User Added"
-echo "Please verify the details"
+Write-Output "New User Added"
+Write-Output "Please verify the details"
 
 print($varnewname)
 print($vartitle)
@@ -46,13 +46,13 @@ print($varcompany)
 print($varwhere)
 print($varemail)
 
-echo "Thank you. Welcome to GlobeX...Get to work."
+Write-Output "Thank you. Welcome to GlobeX...Get to work."
 
 }
 
 
 # Main:
 
-
+Get-GlobexNewGuy
 
 # End:
