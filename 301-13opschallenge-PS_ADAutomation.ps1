@@ -34,17 +34,17 @@ function Get-GlobexNewGuy {
 # Write-Output "And what will your email address be?"
 # read=varemail
 
-New-ADUser -Name $varnewname -OtherAttributes @{'title'=$vartitle;'EmailAddress'=$varemail;'City'=$varwhere;'Company'=$varcompany;'Department'=$vardept}
+New-ADUser -Name $VarNewName 
 
 Write-Output "New User Added"
 Write-Output "Please verify the details"
 
-print($varnewname)
-print($vartitle)
-print($vardept)
-print($varcompany)
-print($varwhere)
-print($varemail)
+print($varNewName)
+#    #print($vartitle)
+#    print($vardept)
+#    print($varcompany)
+#    print($varwhere)
+#    print($varemail)
 
 Write-Output "Thank you. Welcome to GlobeX...Get to work."
 
