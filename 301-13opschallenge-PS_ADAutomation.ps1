@@ -40,7 +40,7 @@ Write-Output "New User Added"
 Write-Output "Please verify the details"
 
 print($varNewName)
-#    #print($vartitle)
+#    print($vartitle)
 #    print($vardept)
 #    print($varcompany)
 #    print($varwhere)
