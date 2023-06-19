@@ -38,21 +38,21 @@ function Get-GlobexNewGuy {
  Write-Output "ferdi@GlobeXpower.com"
  $VarPass = Read-Host "Enter a password" -AsSecureString
 
-New-ADUser -Name $VarNewName -Title $VarTitle -Company $VarCompany -Department $VarDept -City $VarCity 
--State $VarState -EmailAddress $VarEmail -AccountPassword $VarPass
+ New-ADUser -Name $VarNewName -Title $VarTitle -Company $VarCompany -Department $VarDept -City $VarCity 
+ -State $VarState -EmailAddress $VarEmail -AccountPassword $VarPass
 
-Write-Output "New User Added"
-Write-Output "Please verify the details"
+ Write-Output "New User Added"
+ Write-Output "Please verify the details"
 
-Write-Output $VarNewName
-Write-Output $VarTitle
-Write-Output $VarDept
-Write-Output $VarCompany
-Write-Output $VarWhere
-Write-Output $VarEmail
-Write-Output $VarPass
+ Write-Output $VarNewName
+ Write-Output $VarTitle
+ Write-Output $VarDept
+  $VarCompany
+ Write-Output $VarWhere
+ Write-Output $VarEmail
+ Write-Output $VarPass
 
-Write-Output "Thank you. Welcome to GlobeX...Get to work."
+ Write-Output "Thank you. Welcome to GlobeX...Get to work."
 
 }
 
