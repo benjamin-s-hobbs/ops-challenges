@@ -16,39 +16,44 @@
 
 
 # Declaration of variables
-
+choice=("1" "2" "3" "4")
 
 # Declaration of functions
 
 
 get_menu() {
-while true; do
+
+ while true; do
     clear
     echo "1. Print Hello World!"
     echo "2. Ping Self"
     echo "3. Print IP info"
     echo "4. Exit"
-    read -p "choice"
+    read -p "your choice please "
 
-    if[[ $choice==1 ]]; then
-        echo "Hello World!"
-        read -p "Press Enter to continue"
+ if [[ $choice==1 ]] ;
+ then
+    echo "Hello World!"
+    read -p "Press Enter to continue"
 
-    elif[[ $choice==2 ]]; then
-        ping "127.0.0.1"
-        read -p "Press Enter to continue"
+ elif [[$choice==2]] ;
+ then
+    ping 127.0.0.1
+    read -p "Press Enter to continue"
 
-    elif[[ $choice==3 ]]; then
-        ifconfig
-        read -p "Press Enter to continue"
+ elif [[ $choice==3 ]] ;
+ then
+    ifconfig
+    read -p "Press Enter to continue"
        
-    elif[[ $choice==4 ]]; then
-        echo "No problem, come back soon please!"
-        exit0
-    else
-        echo "Invalid choice"
-        read -p "Press Enter to continue"
-    fi
+ elif [[ $choice==4 ]] ;
+ then
+    echo "No problem, come back soon please!"
+    exit0
+ else
+    echo "Invalid choice"
+    read -p "Press Enter to continue"
+ fi
 done
 }
 # Main:                          
