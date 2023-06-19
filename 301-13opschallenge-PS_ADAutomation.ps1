@@ -10,9 +10,10 @@ $VarNewName = "Franz Ferdinand"
 $VarTitle = "TPS Reporting Lead"
 $VarCompany = "GlobeX USA"
 $VarDept = "TPS Department"
-$VarWhere = "Springfield, OR"
+$VarCity = "Springfield"
+$VarState = "OR"
 $VarEmail = "ferdi@GlobeXpower.com"
-
+$VarPass = "ScatterSenbonSakura06!"
 #
 #
 # Declaration of functions:
@@ -20,31 +21,36 @@ $VarEmail = "ferdi@GlobeXpower.com"
 
 function Get-GlobexNewGuy {
 
-# Write-Output "Ok, let's add you to the system."
-# Write-Output "What's your full name? (First Name, Last Name)"
-# read=varnewname
-# Write-Output "What's your title?"
-# read=vartitle
-# Write-Output "What company are you with?"
-# read=varcompany
-# Write-Output "Department?"
-# read=vardept
-# Write-Output "Where will your location be?"
-# read=varwhere
-# Write-Output "And what will your email address be?"
-# read=varemail
+ Write-Output "Ok, let's add you to the system."
+ $VarNewName = Read-Host "What's your full name? (First Name, Last Name)"
+ Write-Output "Franz Ferdinand"
+ $VarTitle = Read-Host "What's your title?"
+ Write-Output "TPS Reporting Lead"
+ $VarCompany = Read-Host "What company are you with?"
+ Write-Output "GlobeX USA"
+ $VarDept =  Read-Host "Department?"
+ Write-Output "TPS Department"
+ $VarCity = Read-Host "Where will your location be? (City)"
+ Write-Output "Springfield"
+ $VarState = Read-Host "And what State?"
+ Write-Output "OR"
+ $VarEmail = Read-Host "And what will your email address be?"
+ Write-Output "ferdi@GlobeXpower.com"
+ $VarPass = Read-Host "Enter a password" -AsSecureString
 
-New-ADUser -Name $VarNewName 
+New-ADUser -Name $VarNewName -Title $VarTitle -Company $VarCompany -Department $VarDept -City $VarCity 
+-State $VarState -EmailAddress $VarEmail -AccountPassword $VarPass
 
 Write-Output "New User Added"
 Write-Output "Please verify the details"
 
-print($varNewName)
-#    print($vartitle)
-#    print($vardept)
-#    print($varcompany)
-#    print($varwhere)
-#    print($varemail)
+Write-Output $VarNewName
+Write-Output $VarTitle
+Write-Output $VarDept
+Write-Output $VarCompany
+Write-Output $VarWhere
+Write-Output $VarEmail
+Write-Output $VarPass
 
 Write-Output "Thank you. Welcome to GlobeX...Get to work."
 
