@@ -18,12 +18,13 @@ import os
 # How to call a variable
 #   print(greeting)
 user_name = input("What is your name?")
+userpath = input("What filepath would you like to see? ")
 varpath = os.walk(userpath)
 
 # Declaration of functions
 def show_me_logs(user_name): 
  
- userpath = input("What filepath would you like to see? ")
+ 
  print("use " + userpath +", correct?")
  print(varpath)
 
