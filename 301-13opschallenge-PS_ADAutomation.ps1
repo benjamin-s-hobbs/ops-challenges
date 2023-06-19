@@ -6,14 +6,7 @@
 #
 # Declaration of variables:
 
-$VarNewName = "Franz Ferdinand"
-$VarTitle = "TPS Reporting Lead"
-$VarCompany = "GlobeX USA"
-$VarDept = "TPS Department"
-$VarCity = "Springfield"
-$VarState = "OR"
-$VarEmail = "ferdi@GlobeXpower.com"
-$VarPass = "ScatterSenbonSakura06!"
+#
 #
 #
 # Declaration of functions:
@@ -47,7 +40,7 @@ function Get-GlobexNewGuy {
  Write-Output $VarNewName
  Write-Output $VarTitle
  Write-Output $VarDept
-  $VarCompany
+ Write-Output $VarCompany
  Write-Output $VarWhere
  Write-Output $VarEmail
  Write-Output $VarPass
