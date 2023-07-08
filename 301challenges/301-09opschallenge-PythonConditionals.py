@@ -29,7 +29,7 @@ import os
 
 prediction = "victory"
 pitch = "muddy"
-crowd = 10,000
+crowd = 10000
 competition = "strong"
 strikers = "exceptional"
 midfield = "average"
@@ -40,6 +40,8 @@ keepers = "solid"
 
 if prediction == "victory":
   print("They think you'll win...don't get cocky!")
+else:
+  print("The pitch is firm, run like the wind!")  
 
 if pitch == "muddy":
   print("The pitch is a bit soft today, so adjust your runs accordingly.")
