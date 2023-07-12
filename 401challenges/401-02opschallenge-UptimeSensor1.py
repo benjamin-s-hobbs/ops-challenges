@@ -7,30 +7,39 @@
 # Date of latest revision:      07/11/2023
 # Purpose:                      In Python, create an uptime sensor tool that uses ICMP packets to evaluate if 
 #                               hosts on the LAN are up or down.
-#                               The script must:
-#                               Transmit a single ICMP (ping) packet to a specific IP every two seconds.
-#                               Evaluate the response as either success or failure.
-#                               Assign success or failure to a status variable.
-#                               For every ICMP transmission attempted, print the status variable along with a 
-#                               comprehensive timestamp and destination IP tested.
-#                               Example output: 2020-10-05 17:57:57.510261 Network Active to 8.8.8.8
+#                               
 
 # References:
 # https://realpython.com/python-datetime/#using-the-python-datetime-module 
 
 # Import Libraries
-import datetime
+from datetime import datetime
 import os
 
 # Declaration of variables
-# How to declare a variable in python
-#   greeting = "Welcome to Python!"
-# How to call a variable
-#   print(greeting)
 
+#Print current date and time
+now = datetime.now()
+print("Current date and time: ")
+print(str(now))
 
+# The script must:
+# Transmit a single ICMP (ping) packet to a specific IP every two seconds.
+ping = os.system("ping 8.8.8.8 -i 2")
+print(ping)
 
 # Declaration of functions
+
+while True:
+    print(os.system("ping 127.0.0.1"))
+
+
+
+# Evaluate the response as either success or failure.
+#                               Assign success or failure to a status variable.
+#                               For every ICMP transmission attempted, print the status variable along with a 
+#                               comprehensive timestamp and destination IP tested.
+#                               Example output: 2020-10-05 17:57:57.510261 Network Active to 8.8.8.8
 
 
 # Main:
