@@ -14,8 +14,7 @@
 
 # Import Libraries
 from datetime import datetime
-import os
-
+import os 
 # Declaration of variables
 
 #Print current date and time
@@ -25,25 +24,36 @@ print(str(now))
 
 # The script must:
 # Transmit a single ICMP (ping) packet to a specific IP every two seconds.
-ping = os.system("ping 8.8.8.8 -i 2")
-print(ping)
+# Assign success or failure to a status variable.
+# Infinite While loop
+while True:
+    ping = os.system("ping 8.8.8.8 -vi 2")
+    print(ping)
+    print(str(now) + " " + str(ping) + " to 8.8.8.8")
+
+# For every ICMP transmission attempted, print the status variable along with a 
+# comprehensive timestamp and destination IP tested.
+# Example output: 2020-10-05 17:57:57.510261 Network Active to 8.8.8.8
 
 # Declaration of functions
 
-while True:
-    print(os.system("ping 127.0.0.1"))
+def heart_ping(target):
 
 
+    # Evaluate the response as either success or failure.
+    if response == 0:
+        pingstatus = "Host is active"
+    else:
+        pingstatus = "Host is down"
 
-# Evaluate the response as either success or failure.
-#                               Assign success or failure to a status variable.
-#                               For every ICMP transmission attempted, print the status variable along with a 
-#                               comprehensive timestamp and destination IP tested.
-#                               Example output: 2020-10-05 17:57:57.510261 Network Active to 8.8.8.8
+    return pingstatus     
+                                      
 
 
 # Main:
 
-                 
+ heart_ping("8.8.8.8") 
+
+
 
 # End
