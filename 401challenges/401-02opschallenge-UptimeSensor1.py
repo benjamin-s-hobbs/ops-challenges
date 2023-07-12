@@ -16,10 +16,10 @@
 #                               Example output: 2020-10-05 17:57:57.510261 Network Active to 8.8.8.8
 
 # References:
-
+# https://realpython.com/python-datetime/#using-the-python-datetime-module 
 
 # Import Libraries
-
+import datetime
 
 # Declaration of variables
 # How to declare a variable in python
