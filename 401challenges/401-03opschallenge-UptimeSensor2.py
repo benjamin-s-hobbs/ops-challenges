@@ -29,7 +29,7 @@ while True:
     print(str(now) + " " + str(ping) + " to 8.8.8.8")
 # Declaration of functions
 def test_ping(target):
-
+    response = os.system("ping -i 2" + target)
     # Evaluate the response as either success or failure.
     if response == 0:
         pingstatus = "Host is active"
