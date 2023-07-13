@@ -2,19 +2,21 @@
 # the shebang line instructs the system to use the env command to locate the python3 
 # interpreter and execute the script with it
 
-# Script Name:                  Ops Challenge: 401-02opschallenge-UptimeSensor1.py
+# Script Name:                  Ops Challenge: 401-03opschallenge-UptimeSensor2.py
 # Author:                       Ben Hobbs
-# Date of latest revision:      07/11/2023
+# Date of latest revision:      07/12/2023
 # Purpose:                      In Python, create an uptime sensor tool that uses ICMP packets to evaluate if 
 #                               hosts on the LAN are up or down.
 #                               
 
 # References:
-# https://realpython.com/python-datetime/#using-the-python-datetime-module 
+
 
 # Import Libraries
 from datetime import datetime
 import os 
+import smtplib
+import getpass
 
 # Declaration of variables
 
@@ -23,10 +25,8 @@ now = datetime.now()
 print("Current date and time: ")
 print(str(now))
 
-while True:
-    ping = os.system("ping 8.8.8.8 -i 2")
-    print(ping)
-    print(str(now) + " " + str(ping) + " to 8.8.8.8")
+
+
 # Declaration of functions
 def test_ping(target):
     response = os.system("ping -i 2" + target)
@@ -35,12 +35,19 @@ def test_ping(target):
         pingstatus = "Host is active"
     else:
         pingstatus = "Host is down"
+    print(pingstatus)
 
-    return pingstatus     
-                                   
+while True:
+    ping = os.system("ping target -i 2")
+    print(ping)
+    print(str(now) + " " + str(ping) + " to target")        
+
 # Main:
 
-test_ping("8.8.8.8") 
+test_ping(target):
+
+while True:
+    test_ping("8.8.8.8") 
 
 # Transmit a single ICMP (ping) packet to a specific IP every two seconds.
 # Assign success or failure to a status variable.
