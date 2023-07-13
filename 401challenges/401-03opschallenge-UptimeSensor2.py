@@ -12,35 +12,93 @@
 # References:
 
 
-# Import Libraries
-from datetime import datetime
+import datetime
 import os 
 import smtplib
-import getpass
+from getpass import getpass
 
 # Declaration of variables
+up = "Host is active"
+down = "Host is down"
+
+last = 0
+ping_result = 0
+
+email = input("Enter your email: ")
+password = getpass("Enter your password: ")
+ip = input("What IP address would you like to monitor? ")
+
+
+
+
+# Declaration of functions
+
+#Function to handle the up alert - changes from down to up
+def send_down_Alert():
+    now = datetime.datetime.now
+#Start smtp session
+#TLS for encryption
+# Authentication to the email account
+# Sending the email 
+s.sendmail("bot@codefoellows.com", email, message)
+# Close the session
+s.quit()
+
+
+#Function to handle the down alert - changes from down to up 
+
+
+
+
+
+# Function to handle the ping test
+def ping_test():
+    now = datetime.datetime.now()
+
+    global ping_result
+    global last
+
+    # Ping result check - the logic that we fleshed out yesterday 
+    if ((ping_result != last) and (ping_result == up)):
+
+        # Change the value of last (because we just confirmed it was "up" in the previous line of code)
+        last = up
+        # Calling the function to send the email
+        send_upAlert()
+    elif ((ping_result != last) and (ping_result == down)):
+
+        # Change the value of last (because we just confirmed it was "down" in the previous line of code)
+        last = down
+        # Calling the function to send the email
+        send_downAlert()
+
+    # Do the actual ping (using a local variable called response)
+    response = os.system("ping -i 2" + ip)
+
+    # Evaluate the ping response
+    if response == 0:
+        ping_result = up
+    else:
+        ping_result = down
+    print(str(now) + " " + str(ping) + " to " ip) 
+
+
+
 
 #Print current date and time
 now = datetime.now()
 print("Current date and time: ")
 print(str(now))
-
-
-
-# Declaration of functions
 def test_ping(target):
-    response = os.system("ping -i 2" + target)
+    
     # Evaluate the response as either success or failure.
-    if response == 0:
-        pingstatus = "Host is active"
-    else:
-        pingstatus = "Host is down"
+    
     print(pingstatus)
 
 while True:
     ping = os.system("ping target -i 2")
     print(ping)
-    print(str(now) + " " + str(ping) + " to target")        
+          
 
 # Main:
 
