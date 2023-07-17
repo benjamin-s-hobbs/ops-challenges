@@ -13,6 +13,7 @@
 
 
 import datetime
+import time 
 import os 
 import smtplib
 from getpass import getpass
@@ -20,10 +21,11 @@ from getpass import getpass
 # Declaration of variables
 up = "Host is active"
 down = "Host is down"
-
+now = datetime.datetime.now
 last = 0
 ping_result = 0
-
+curr = time.time()
+date_time = datetime.fromtimestamp(curr)
 email = input("Enter your email: ")
 password = getpass("Enter your password: ")
 ip = input("What IP address would you like to monitor? ")
@@ -35,7 +37,7 @@ ip = input("What IP address would you like to monitor? ")
 
 #Function to handle the up alert - changes from down to up
 def send_down_Alert():
-    now = datetime.datetime.now
+    
 #Start smtp session
 #TLS for encryption
 # Authentication to the email account
