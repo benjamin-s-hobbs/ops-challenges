@@ -8,20 +8,18 @@
 # Purpose:                      
 
 # References:
-import cryptography.fernet import Fernet
+from cryptography.fernet import Fernet
 
 # Import Libraries
 
 
-# Declaration of variables
-# How to declare a variable in python
-#   greeting = "Welcome to Python!"
-# How to call a variable
-#   print(greeting)
+# Declaration of variables (global)
+
 
 
 
 # Declaration of functions
+
 # Write a function that handles key generation
 def gen_key():
 
@@ -37,12 +35,13 @@ def load_key():
     return open("key.key", "r").read()
 
 # Main:
+
 # Generate and write the new key
-write_key()
+gen_key()
 
 # Load the generated key
 key = load_key()
-print("Key is " + key)
+print("Key is " + str(key.decode('utf-8')))
 
 # Encrypt a message
 
@@ -56,5 +55,8 @@ f = Fernet(key)
 
 #Encrypt your message
 encrypted_message = f.encrypt(message)
+
+#Print the encrypted message
+print()
 
 # End
