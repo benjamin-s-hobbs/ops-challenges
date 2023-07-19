@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env/python3
 # the shebang line instructs the system to use the env command to locate the python3 
 # interpreter and execute the script with it
 
@@ -8,10 +8,10 @@
 # Purpose:                      
 
 # References:
-from cryptography.fernet import Fernet
+
 
 # Import Libraries
-
+from cryptography.fernet import Fernet
 
 # Declaration of variables (global)
 
@@ -33,8 +33,19 @@ def load_key():
 
     # Retreives the generated key from the key.key file.
     return open("key.key", "r").read()
+# Function to encrypt a message
+
+# Function to decrypt a message
+
+# Function to encrypt a file
+
+encrypted_file = f.encrypt(file.data)
+# Function to decrypt a file
+def 
+# Function to create a user menu for the above options
 
 # Main:
+# Check to see if a key exists already
 
 # Generate and write the new key
 gen_key()
@@ -43,7 +54,7 @@ gen_key()
 key = load_key()
 print("Key is " + str(key.decode('utf-8')))
 
-# Encrypt a message
+
 
 # Message to be encrypted
 message = "THIS IS TOP SECRET!!"

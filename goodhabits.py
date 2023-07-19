@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env/python3
 # the shebang line instructs the system to use the env command to locate the python3 
 # interpreter and execute the script with it
 
