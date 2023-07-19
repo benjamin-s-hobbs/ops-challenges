@@ -32,69 +32,96 @@
 from cryptography.fernet import Fernet
 
 # Declaration of variables (global)
-# Value of key is assigned to a variable
-f = Fernet(key)
-# The plaintext is converted = ciphertext
-token =f.encrypt(b"welcome to cybersecurity")
-
-# Decrypting the ciphertext = plaintext
-d = f.decrypt(token)
-
-
 
 
 # Declaration of functions
 
-# Write a function to encrypt a message
-def encrypt_message():
+# Write a function to generate a key for encryption/decryption
+def gen_key():
 
     # Generate a key.
     key = Fernet.generate_key()
+    print(key)
 
     # Saving the generated key to a file for reuse.
     with open("key.key", "wb") as key_file:
         key_file.write(key)      
 
-    # Write a function to load up the generated key so we can encrypt and decrypt
-    def load_key():
+# Write a function to load up the generated key so we can encrypt and decrypt
+def load_key():
 
-        # Retreives the generated key from the key.key file.
-        return open("key.key", "rb").read()
-    # Function to encrypt a message
-
-    # Function to decrypt a message
-
-    # Function to encrypt a file
-
-    encrypted_file = f.encrypt(file.data)
-    # Function to decrypt a file
-    
-    # Function to create a user menu for the above options
-
-    # Main:
-    # Check to see if a key exists already
-
-    # Generate and write the new key
-    key = Fernet.generate_key()
-
-    # Load the generated key
-    key = load_key()
-    print("Key is " + str(key.decode('utf-8')))
-
-
-
-    # Message to be encrypted
-    message = "THIS IS TOP SECRET!!"
-
-    print ("Plaintext message is" + message)
-
-    # DO THE ENCRYPTION - Initiatilize the Fernet modeule and names it "f"
+    # Retreives the generated key from the key.key file.
+    return open("key.key", "rb").read()
+# Function to encrypt a message
+def encrypt_message():
     f = Fernet(key)
+    user_message = input("What is the message that you would like to encrypt?")
+    encrypted_message = user_message.encode()
+    
+    # encrypt the message
+    encrypted = f.encrypt(encrypted_message)
+    print("Here is your encrypted message: ")
+    print(encrypted)
 
-    #Encrypt your message
-    encrypted_message = f.encrypt(message)
+# Function to decrypt a message
+def decrypt_message():
+    f = Fernet(key)
+    user_message = input("What is the message that you would like to decrypt?")
+    decrypted_message = user_message.encode()
+    
+    # decrypt the message
+    decrypted = f.decrypt(decrypted_message)
+    print("Here is your encrypted message: ")
+    print(decrypted)
 
-    #Print the encrypted message
-    print()
+# Function to encrypt a file
+def encrypt_file():
+    f = Fernet(key)
+    filename = input("What is the file that you would like to encrypt?")
+    with open(filename, "rb") as file:
+        file_data = file.read()
+        encrypted_file = f.encrypt(file_data)
+        # write the encrypted data to a file
+        with open(filename, "wb") as file:
+            file.write(encrypted_file)
+    
+# Function to decrypt a file
+def decrypt_file():
+    f = Fernet(key)
+    filename = input("What is the file that you would like to decrypt?")
+    with open(filename, "rb") as file:
+        file_data = file.read()
+        decrypted_file = f.decrypt(file_data)
+        # write the decrypted data to a file
+        with open(filename, "wb") as file:
+            file.write(decrypted_file)
+# Function to create a user menu for the above options
+def select_option():
+    mode = input("\nWhat would you like to do? Please choose an option. \n Mode 1 - Encrypt a file \n Mode 2 - Decrypt a file \n Mode 3 - Encypt a message \n Mode 4 - Decrypt a message \n Please enter a number: ")
 
-    # End
+
+# Main:
+# Check to see if a key exists already
+
+# Generate and write the new key
+key = Fernet.generate_key()
+
+# Load the generated key
+key = load_key()
+print("Key is " + str(key.decode('utf-8')))
+
+# Message to be encrypted
+message = "THIS IS TOP SECRET!!".encode()
+
+print ("Plaintext message is" + str(message.decode('utf-8')))
+
+# DO THE ENCRYPTION - Initiatilize the Fernet modeule and names it "f"
+f = Fernet(key)
+
+#Encrypt your message
+encrypted_message = f.encrypt(message)
+
+#Print the encrypted message
+print("the encrypted message is " + encrypted_message.decode('utf-8'))
+
+# End
