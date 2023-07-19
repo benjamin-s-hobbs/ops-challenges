@@ -11,11 +11,13 @@
 #                               
 # References:
 # JUDICIOUS help from Marco...really loving the way he breaks down the thought process of creating functions (solution in class)
-# 
+# https://appdividend.com/2020/01/20/python-list-of-files-in-directory-and-subdirectories/
 
 # Import Libraries
 from cryptography.fernet import Fernet
 from os.path import exists
+import os.walk 
+
 # Declaration of variables (global)
 
 
@@ -80,6 +82,25 @@ def decrypt_file():
         # write the decrypted data to a file
         with open(filename, "wb") as file:
             file.write(decrypted_file)
+
+# Function to encrypt a folder (recursively)
+def encrypt_folder(path, key):
+    f = Fernet(key)
+    path = input("What is the folder that you would like to encrypt?")
+    with open(path, "rb") as path:
+        path = path.read()
+        encrypted_folder = f.encrypt(path)
+        print(encrypted_folder)
+
+# Function to decrypt a folder (recursively)
+def decrypt_folder(path, key):
+    f = Fernet(key)
+    path = input("What is the folder that you would like to decrypt?")
+    with open(path, "rb") as path:
+        path = path.read()
+        decrypted_folder = f.decrypt(path)
+        print(decrypted_folder)
+
 # Function to create a user menu for the above options
 def select_option():
     mode = input("\nWhat would you like to do? Please choose an option. \n Mode 1 - Encrypt a file \n Mode 2 - Decrypt a file \n Mode 3 - Encypt a message \n Mode 4 - Decrypt a message \n Mode 5 - Encrypt a folder (and contents) \n Mode 6 - Decrypt a folder (and contents) \n Please enter a number: ")
@@ -94,7 +115,12 @@ def select_option():
         print("Your message is encrypted")
     elif (mode == "4"):
         print("Your message is decrypted")
-
+    elif (mode == "5"):
+        encrypt_folder(path, key)
+        print("Your folder and contents are now encrypted")
+    elif (mode == "6"):
+        decrypt_folder(path, key)
+        print("Your folder and contents are now decrypted")
     else:
         print("Invalid Selection, self-destruct sequence activated...")
         print("goodbye")
@@ -112,8 +138,8 @@ else:
     gen_key()
     key = load_key()
     print("generated new key")
-# Generate and write the new key
-key = Fernet.generate_key()
+
+select_option()
 
 
 # End
