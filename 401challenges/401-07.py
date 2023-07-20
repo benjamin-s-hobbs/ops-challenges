@@ -2,36 +2,22 @@
 # the shebang line instructs the system to use the env command to locate the python3 
 # interpreter and execute the script with it
 
-# Script Name:                  Ops Challenge: 401-06opschallenge-FileEncryption.py
+# Script Name:                  Ops Challenge: 401-07opschallenge-FileEncryption.py
 # Author:                       Ben Hobbs
-# Date of latest revision:      07/17/2023
-# Purpose:                      In Python, create a script that utilizes the cryptography library to:
-#                               Prompt the user to select a mode:
-#                               Encrypt a file      (mode 1)
-#                               Decrypt a file      (mode 2)
-#                               Encrypt a message   (mode 3)
-#                               Decrypt a message   (mode 4)
-#                               If mode 1 or 2 are selected, prompt the user to provide a filepath to a target file.
-#                               If mode 3 or 4 are selected, prompt the user to provide a cleartext string.
-#                               Depending on the selection, perform one of the below functions. 
-#
-#                               You’ll need to create four functions:
-#                               Encrypt the target file if in mode 1.
-#                               Delete the existing target file and replace it entirely with the encrypted version.
-#                               Decrypt the target file if in mode 2.
-#                               Delete the encrypted target file and replace it entirely with the decrypted version.
-#                               Encrypt the string if in mode 3.
-#                               Print the ciphertext to the screen.
-#                               Decrypt the string if in mode 4.
-#                               Print the cleartext to the screen.
-
+# Date of latest revision:      07/18/2023
+# Purpose:                      Add a feature capability to your script to:
+#                               Recursively encrypt a single folder and all its contents.
+#                               Recursively decrypt a single folder that was encrypted by this tool.
+#                               
 # References:
-# JUDICIOUS help from Marco...really loving the way he breaks down the thought process of creating functions
-# 
+# JUDICIOUS help from Marco...really loving the way he breaks down the thought process of creating functions (solution in class)
+# https://appdividend.com/2020/01/20/python-list-of-files-in-directory-and-subdirectories/
 
 # Import Libraries
 from cryptography.fernet import Fernet
 from os.path import exists
+import os.walk
+
 # Declaration of variables (global)
 
 
@@ -96,9 +82,26 @@ def decrypt_file():
         # write the decrypted data to a file
         with open(filename, "wb") as file:
             file.write(decrypted_file)
+
+# Function to encrypt a folder (recursively)
+def encrypt_folder(path, key):
+    f = Fernet(key)
+    path = input("What is the path to the folder that you would like to encrypt?")
+    os.walk(path, topdown=True, onerror=None, followlinks=False)
+    encrypted_folder = f.encrypt.encode(path)
+    print(encrypted_folder)
+
+# Function to decrypt a folder (recursively)
+def decrypt_folder(path, key):
+    f = Fernet(key)
+    path = input("What is the path to the folder that you would like to decrypt?")
+    os.walk(path, topdown=True, onerror=None, followlinks=False)
+    decrypted_folder = f.decrypt.encode(path)
+    print(decrypted_folder)
+
 # Function to create a user menu for the above options
 def select_option():
-    mode = input("\nWhat would you like to do? Please choose an option. \n Mode 1 - Encrypt a file \n Mode 2 - Decrypt a file \n Mode 3 - Encypt a message \n Mode 4 - Decrypt a message \n Please enter a number: ")
+    mode = input("\nWhat would you like to do? Please choose an option. \n Mode 1 - Encrypt a file \n Mode 2 - Decrypt a file \n Mode 3 - Encypt a message \n Mode 4 - Decrypt a message \n Mode 5 - Encrypt a folder (and contents) \n Mode 6 - Decrypt a folder (and contents) \n Please enter a number: ")
     if (mode == "1"):
         encrypt_file()
         print("Your file is now encrypted")
@@ -110,6 +113,12 @@ def select_option():
         print("Your message is encrypted")
     elif (mode == "4"):
         print("Your message is decrypted")
+    elif (mode == "5"):
+        encrypt_folder(path, key)
+        print("Your folder and contents are now encrypted")
+    elif (mode == "6"):
+        decrypt_folder(path, key)
+        print("Your folder and contents are now decrypted")
     else:
         print("Invalid Selection, self-destruct sequence activated...")
         print("goodbye")
@@ -127,8 +136,8 @@ else:
     gen_key()
     key = load_key()
     print("generated new key")
-# Generate and write the new key
-key = Fernet.generate_key()
+
+select_option()
 
 
 # End

@@ -15,7 +15,7 @@
 import datetime
 import time 
 import os 
-import smtplib
+from smtplib import sendmail
 from getpass import getpass
 
 # Declaration of variables
@@ -42,9 +42,9 @@ def send_down_Alert():
 #TLS for encryption
 # Authentication to the email account
 # Sending the email 
-s.sendmail("bot@codefoellows.com", email, message)
+sendmail("bot@codefoellows.com", email, message)
 # Close the session
-s.quit()
+quit()
 
 
 #Function to handle the down alert - changes from down to up 
@@ -100,7 +100,7 @@ def test_ping(target):
 while True:
     ping = os.system("ping target -i 2")
     print(ping)
-          
+
 
 # Main:
 

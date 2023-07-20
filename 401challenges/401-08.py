@@ -2,21 +2,22 @@
 # the shebang line instructs the system to use the env command to locate the python3 
 # interpreter and execute the script with it
 
-# Script Name:                  Ops Challenge: 401-07opschallenge-FileEncryption.py
+# Script Name:                  Ops Challenge: 401-08opschallenge-FileEncryption3.py
 # Author:                       Ben Hobbs
-# Date of latest revision:      07/18/2023
+# Date of latest revision:      07/19/2023
 # Purpose:                      Add a feature capability to your script to:
-#                               Recursively encrypt a single folder and all its contents.
-#                               Recursively decrypt a single folder that was encrypted by this tool.
+#                               Alter the desktop wallpaper on a Windows PC with a ransomware message
+#                               Create a popup window on a Windows PC with a ransomware message
+#
 #                               
 # References:
-# JUDICIOUS help from Marco...really loving the way he breaks down the thought process of creating functions (solution in class)
+# 
 # https://appdividend.com/2020/01/20/python-list-of-files-in-directory-and-subdirectories/
 
 # Import Libraries
 from cryptography.fernet import Fernet
 from os.path import exists
-import os.walk 
+import os.walk
 
 # Declaration of variables (global)
 
@@ -86,20 +87,18 @@ def decrypt_file():
 # Function to encrypt a folder (recursively)
 def encrypt_folder(path, key):
     f = Fernet(key)
-    path = input("What is the folder that you would like to encrypt?")
-    with open(path, "rb") as path:
-        path = path.read()
-        encrypted_folder = f.encrypt(path)
-        print(encrypted_folder)
+    path = input("What is the path to the folder that you would like to encrypt?")
+    os.walk(path, topdown=True, onerror=None, followlinks=False)
+    encrypted_folder = f.encrypt.encode(path)
+    print(encrypted_folder)
 
 # Function to decrypt a folder (recursively)
 def decrypt_folder(path, key):
     f = Fernet(key)
-    path = input("What is the folder that you would like to decrypt?")
-    with open(path, "rb") as path:
-        path = path.read()
-        decrypted_folder = f.decrypt(path)
-        print(decrypted_folder)
+    path = input("What is the path to the folder that you would like to decrypt?")
+    os.walk(path, topdown=True, onerror=None, followlinks=False)
+    decrypted_folder = f.decrypt.encode(path)
+    print(decrypted_folder)
 
 # Function to create a user menu for the above options
 def select_option():
