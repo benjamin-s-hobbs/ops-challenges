@@ -17,7 +17,7 @@
 # Import Libraries
 from cryptography.fernet import Fernet
 from os.path import exists
-import os.walk
+import os
 
 # Declaration of variables (global)
 
@@ -115,9 +115,11 @@ def select_option():
     elif (mode == "4"):
         print("Your message is decrypted")
     elif (mode == "5"):
+        path = input("What is the path to the folder that you would like to encrypt?")
         encrypt_folder(path, key)
         print("Your folder and contents are now encrypted")
     elif (mode == "6"):
+        path = input("What is the path to the folder that you would like to encrypt?")
         decrypt_folder(path, key)
         print("Your folder and contents are now decrypted")
     else:
