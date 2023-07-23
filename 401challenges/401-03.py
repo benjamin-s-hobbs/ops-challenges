@@ -34,11 +34,9 @@ from getpass import getpass
 # Declaration of variables
 up = " Host is active at "
 down = " Host is down at "
-now = datetime.now
 last = 0
 ping_result = 0
-curr = time.time()
-date_time = datetime.fromtimestamp(curr)
+
 email = input("Enter your email: ")
 password = getpass("Enter your password: ")
 target = input("What IP address would you like to target? ")
@@ -52,12 +50,12 @@ def send_upAlert():
 
     #Start smtp session
     s = smtplib.SMTP("smtp.gmail.com", 587)
-
+    
     #TLS for encryption
     s.starttls()
     # Authentication to the email account
     s.login(email, password)
-
+    
     message = "YOUR SERVER IS BACK UP ON THE NETWORK!"
 
     #Sending the email 
@@ -73,7 +71,7 @@ def send_downAlert():
 
     #Start smtp session
     s = smtplib.SMTP("smtp.gmail.com", 587)
-
+    
     #TLS for encryption
     s.starttls()
     # Authentication to the email account
