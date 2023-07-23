@@ -5,57 +5,91 @@
 # Script Name:                  Ops Challenge: 401-03opschallenge-UptimeSensor2.py
 # Author:                       Ben Hobbs
 # Date of latest revision:      07/12/2023
-# Purpose:                      In Python, create an uptime sensor tool that uses ICMP packets to evaluate if 
-#                               hosts on the LAN are up or down.
+# Purpose:                      In Python, add the below features to your uptime sensor tool.
+#                               The script must:
+
+#                               Ask the user for an email address and password to use for sending notifications.
+#                               Send an email to the administrator if a host status changes 
+#                               (from “up” to “down” or “down” to “up”).
+#                               Clearly indicate in the message which host status changed, 
+#                               the status before and after, and a timestamp of the event.
+#                               Important Notes
+#                               DO NOT commit your email password in plain text within your script to GitHub 
+#                               as this easily becomes public.
+#                               Create a new “burner” account for this exercise. Do not use an existing email account.
 #                               
 
-# References:
+# References: https://towardsdatascience.com/how-to-easily-automate-emails-with-python-8b476045c151
+# Marco Vasquez in-class reference (for resubmission)
 
 
-import datetime
+
+# Import Libraries:
+from datetime import datetime
 import time 
 import os 
 import smtplib
 from getpass import getpass
 
 # Declaration of variables
-up = "Host is active"
-down = "Host is down"
-now = datetime.datetime.now
+up = " Host is active at "
+down = " Host is down at "
+now = datetime.now
 last = 0
 ping_result = 0
 curr = time.time()
 date_time = datetime.fromtimestamp(curr)
 email = input("Enter your email: ")
 password = getpass("Enter your password: ")
-ip = input("What IP address would you like to monitor? ")
-
-
+target = input("What IP address would you like to target? ")
 
 
 # Declaration of functions
 
 #Function to handle the up alert - changes from down to up
-def send_down_Alert():
+def send_upAlert():
+    now = datetime.now
+
+    #Start smtp session
+    s = smtplib.SMTP("smtp.gmail.com", 587)
+
+    #TLS for encryption
+    s.starttls()
+    # Authentication to the email account
+    s.login(email, password)
+
+    message = "YOUR SERVER IS BACK UP ON THE NETWORK!"
+
+    #Sending the email 
+    s.sendmail("bot@codefellows.com", email, message)
     
-#Start smtp session
-#TLS for encryption
-# Authentication to the email account
-# Sending the email 
-    smtplib.sendmail("bot@codefellows.com", email, message)
-# Close the session
-quit()
+    # Close the session
+    s.quit()
 
 
-#Function to handle the down alert - changes from down to up 
+#Function to handle the down alert - changes from up to down 
+def send_downAlert():
+    now = datetime.now
 
+    #Start smtp session
+    s = smtplib.SMTP("smtp.gmail.com", 587)
 
+    #TLS for encryption
+    s.starttls()
+    # Authentication to the email account
+    s.login(email, password)
 
+    message = "YOUR SERVER IS DOWN ON THE NETWORK- GO FIND THE PROBLEM!"
 
+    #Sending the email 
+    s.sendmail("bot@codefellows.com", email, message)
+    
+    # Close the session
+    s.quit()
 
 # Function to handle the ping test
 def ping_test():
-    now = datetime.datetime.now()
+    now = datetime.now()
 
     global ping_result
     global last
@@ -75,47 +109,19 @@ def ping_test():
         send_downAlert()
 
     # Do the actual ping (using a local variable called response)
-    response = os.system("ping -i 2" + ip)
+    response = os.system("ping -c 1" + target)
 
     # Evaluate the ping response
     if response == 0:
         ping_result = up
     else:
         ping_result = down
-    print(str(now) + " " + str(ping) + " to " ip) 
+    print(now)
+    print(target)
 
+    #Main:
+    # Infinite heartbeat
+    while True:
+        ping_test()
+        time.sleep(2)
 
-
-
-#Print current date and time
-now = datetime.now()
-print("Current date and time: ")
-print(str(now))
-def test_ping(target):
-    
-    # Evaluate the response as either success or failure.
-    
-    print(ping_result)
-
-while True:
-    ping = os.system("ping target -i 2")
-    print(ping)
-
-
-# Main:
-
-test_ping(target):
-
-while True:
-    test_ping("8.8.8.8") 
-
-# Transmit a single ICMP (ping) packet to a specific IP every two seconds.
-# Assign success or failure to a status variable.
-# Infinite While loop
-
-
-# For every ICMP transmission attempted, print the status variable along with a 
-# comprehensive timestamp and destination IP tested.
-# Example output: 2020-10-05 17:57:57.510261 Network Active to 8.8.8.8
-
-# End
