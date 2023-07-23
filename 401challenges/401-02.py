@@ -11,44 +11,50 @@
 
 # References:
 # https://realpython.com/python-datetime/#using-the-python-datetime-module 
+# Marco Vasquez in-class reference
 
 # Import Libraries
 from datetime import datetime
 import os 
+import time
 
-# Declaration of variables
+# Declaration of variables (global):
 
-#Print current date and time
-now = datetime.now()
-print("Current date and time: ")
-print(str(now))
 
-while True:
-    ping = os.system("ping 8.8.8.8 -i 2")
-    print(ping)
-    print(str(now) + " " + str(ping) + " to 8.8.8.8")
-# Declaration of functions
+
+# Declaration of functions:
+
+# Write a function to send a test ping to a target.
+# 
 def test_ping(target):
-
+    response = os.system("ping -c 1 " + target)
     # Evaluate the response as either success or failure.
     if response == 0:
-        pingstatus = "Host is active"
+        pingstatus = " Host is active at "
     else:
-        pingstatus = "Host is down"
+        pingstatus = " Host is down at "
+    # Assign success or failure to a status variable.
+    return pingstatus
+    # Handle the function output
 
-    return pingstatus     
-                                   
+# Create an input to pass to a variable for a target IP address
+target = input("What IP address would you like to target? ")
+pingstatus = test_ping(target)
+# Infinite While loop
+# Infinite loop to create a heartbeat sensor
+while True:
+    #Print current date and time
+    now = datetime.now()
+    # For every ICMP transmission attempted, print the status variable along with a 
+    # comprehensive timestamp and destination IP tested.
+    # Example output: 2020-10-05 17:57:57.510261 Host is active at 8.8.8.8
+    print(str(now) + pingstatus + target)
+    # Transmit a single ICMP (ping) packet to a specific IP every two seconds.
+    time.sleep(2)
+
 # Main:
 
-test_ping("8.8.8.8") 
+test_ping(target)
 
-# Transmit a single ICMP (ping) packet to a specific IP every two seconds.
-# Assign success or failure to a status variable.
-# Infinite While loop
-
-
-# For every ICMP transmission attempted, print the status variable along with a 
-# comprehensive timestamp and destination IP tested.
-# Example output: 2020-10-05 17:57:57.510261 Network Active to 8.8.8.8
 
 # End

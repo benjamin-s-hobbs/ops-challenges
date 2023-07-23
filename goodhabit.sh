@@ -6,12 +6,12 @@
 # Purpose:                      To write a script that displays running processes, asks the user for a PID, and then kills the process with that PID;
 
 
-# Declaration of variables
+# Declaration of variables (global)
 
 
 # Declaration of functions
 
 
-# Main:                          
+# Main (calling functions):                          
 
-# End
+# End (end of script)

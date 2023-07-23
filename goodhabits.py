@@ -18,10 +18,10 @@
 # References:
 
 
-# Import Libraries
+# Import Libraries:
 
 
-# Declaration of variables
+# Declaration of variables (Global):
 # How to declare a variable in python
 #   greeting = "Welcome to Python!"
 # How to call a variable
@@ -29,11 +29,11 @@
 
 
 
-# Declaration of functions
+# Declaration of functions:
 
 
-# Main:
+# Main (calling functions):
 
-                 
 
-# End
+
+# End (end of script)
