@@ -47,7 +47,7 @@ dst_port = 22
 # Combine ARP request packet and Ethernet frame using ‘/’.
 
 # TCP ping packet
-response= sr(IP(dst=host)/TCP(sport=scr_port,dport=dst_port,flags="S"),timeout=1, verbose=0)
+response= sr1(IP(dst=host)/TCP(sport=scr_port,dport=dst_port,flags="S"),timeout=1, verbose=0)
 
 
 print(response)
@@ -60,7 +60,6 @@ print(response)
 # Declaration of functions:
 
 # Write a function to test our specified range of ports (for loop)
-
 # Write a function to send a RST packet if 0x12 flag is received (to close the open connection)
 def scan_ports():
     if (response.haslayer(TCP)):
