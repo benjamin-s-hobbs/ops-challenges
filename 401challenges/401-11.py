@@ -23,7 +23,9 @@
 
 # Import Libraries:
 import sys
+import ipaddress 
 from scapy.all import sr1, TCP, ICMP, IP
+
 
 
 # Declaration of variables (Global):
@@ -31,7 +33,7 @@ from scapy.all import sr1, TCP, ICMP, IP
 # Define target host and port to scan
 
 # Set the network range using variable.
-network_cidr = ("xxx.xxx.xxx.xxx/xx")
+network_cidr = "xxx.xxx.xxx.xxx/xx"
 
 host = "scanme.namp.org"
 port_range = 22
@@ -76,7 +78,8 @@ def scan_ports():
             print(f"{host}:{dst_port} is closed.")
             print(host + str(dst_port) + " is closed.")
         # Gets the value of the flag in the TCP packet. No flag in the TCP packet?
-        else (response.getlayer(TCP).flags == 0x00):
+        else:
+            response.getlayer(TCP).flags == 0x00
             # if no flag is received, notify the user the port is filtered and siliently dropped.
             print(f"{host}:{dst_port} is filtered and silently dropped.")
             print(host + str(dst_port) + " is filtered and silently dropped.")
