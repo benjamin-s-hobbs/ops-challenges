@@ -23,7 +23,7 @@
 
 # Import Libraries:
 import sys
-from scapy.all import sr1,
+from scapy.all import sr1, TCP, ICMP, IP
 
 
 # Declaration of variables (Global):
