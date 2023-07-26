@@ -2,9 +2,9 @@
 # the shebang line instructs the system to use the env command to locate the python3 
 # interpreter and execute the script with it
 
-# Script Name:                  Ops Challenge: 401-11-NetworkSecurityToolScapy1.py
+# Script Name:                  Ops Challenge: 401-12-NetworkSecurityToolScapy2.py
 # Author:                       Ben Hobbs
-# Date of latest revision:      07/24/2023
+# Date of latest revision:      07/25/2023
 # Purpose:                      In Python, create a TCP Port Range Scanner that tests whether a TCP port is open or closed. The script must:
 #                               Utilize the scapy library
 #                               Define host IP
@@ -18,7 +18,7 @@
 
 # References:
 # Demo code
-# Marco Vasquez 401-Class11 topic intro 
+# Marco Vasquez 401-Class12 topic intro 
 # https://scapy.readthedocs.io/en/latest/usage.html
 
 # Import Libraries:
