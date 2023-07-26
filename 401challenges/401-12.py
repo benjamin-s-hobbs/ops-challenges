@@ -41,6 +41,7 @@ network_cidr = "192.142.0.0/24"
 ip_list = ipaddress.IPv4Network(network_cidr)
 for ip in ip_list:
     print(ip)
+    
 host_count = 0
 # Define target host and ports to scan
 host = "scanme.namp.org"
