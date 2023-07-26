@@ -15,7 +15,7 @@
 # https://appdividend.com/2020/01/20/python-list-of-files-in-directory-and-subdirectories/
 
 # Import Libraries
-from cryptography.fernet import Fernet
+from cryptography.fernet import Fernet 
 from os.path import exists
 import os # to get system root
 import ctypes # so we can interact with windows dlls and change 

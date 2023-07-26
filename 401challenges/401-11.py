@@ -50,8 +50,6 @@ dst_port = 22
 
 # TCP ping packet
 response= sr1(IP(dst=host)/TCP(sport=scr_port,dport=dst_port,flags="S"),timeout=1, verbose=0)
-
-
 print(response)
 
 # sends a single ping and prints out the response packet
