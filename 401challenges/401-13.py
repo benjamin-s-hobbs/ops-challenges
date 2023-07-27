@@ -5,26 +5,20 @@
     # Script Name:                  Ops Challenge: 401-13-NetworkSecurityToolScapy3.py
     # Author:                       Ben Hobbs
     # Date of latest revision:      07/26/2023
-    # Purpose:                      Add the following features to your Network Security Tool:
-    #                               User menu prompting choice between TCP Port Range Scanner mode and ICMP Ping Sweep mode, 
-    #                               with the former leading to yesterday’s feature set
-    #                               ICMP Ping Sweep tool
-    #                               Prompt user for network address including CIDR block, for example “10.10.0.0/24”
-    #                               Careful not to populate the host bits!
-    #                               Create a list of all addresses in the given network
-    #                               Ping all addresses on the given network except for network address and broadcast address
-    #                               If no response, inform the user that the host is down or unresponsive.
-    #                               If ICMP type is 3 and ICMP code is either 1, 2, 3, 9, 10, or 13 then inform the user that the 
-    #                               host is actively blocking ICMP traffic.
-    #                               Otherwise, inform the user that the host is responding.
-    #                               Count how many hosts are online and inform the user.
-
-
+    # Purpose:                      The final iteration of your network scanning tool will perform the following:
+#                                    Ping an IP address determined by the user.
+#                                    If the host exists, scan its ports and determine if any are open.
+#                                    In Python, combine the two modes (port and ping) of your network scanner script.
+#                                    Eliminate the choice of mode selection.
+#                                    Continue to prompt the user for an IP address to target.
+#                                    Move port scan to its own function.
+#                                    Call the port scan function if the host is responsive to ICMP echo requests.
+#                                    Print the output to the screen.
 
     # References:
     # Demo code
-    # Marco Vasquez 401-Class12 topic intro 
-    # https://scapy.readthedocs.io/en/latest/usage.html
+    # Marco Vasquez 401-Class13 topic intro 
+    # 
 
     # Import Libraries:
 #    import sys
