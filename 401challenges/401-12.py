@@ -37,7 +37,7 @@ from scapy.all import sr1, TCP, ICMP, IP
 # Declaration of variables (Global):
 
 # Set the network range using variable.
-network_cidr = "192.142.0.0/24"
+network_cidr = ()
 ip_list = ipaddress.IPv4Network(network_cidr)
 for ip in ip_list:
     print(ip)
@@ -52,10 +52,6 @@ dst_port = 22
 # TCP ping packet
 response= sr1(IP(dst=host)/TCP(sport=scr_port,dport=dst_port,flags="S"),timeout=1, verbose=0)
 print(response)
-
-# ICMP ping. sends a single ping and prints out the response packet
-#    
-#        
 
 # Declaration of functions:
 
@@ -124,6 +120,8 @@ def select_scan():
     elif (scan == "2"):
         ping_sweep()
         print("Now conducting ICMP ping sweep.")
+    elif (scan == "3"):
+        sys.exit
     else:
         print("Invalid Selection, self-destruct sequence activated...")
         time.sleep(2)
@@ -137,7 +135,7 @@ def select_scan():
 
 # Main (calling functions):
 
-
+select_scan()
 
 
 
