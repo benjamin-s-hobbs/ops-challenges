@@ -135,6 +135,6 @@ def ping_scan():
 
 #    select_scan()
 
-ping_scan
+ping_scan()
 
 # End (end of script)
