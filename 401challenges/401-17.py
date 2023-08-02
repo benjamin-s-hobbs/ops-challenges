@@ -2,9 +2,9 @@
 # the shebang line instructs the system to use the env command to locate the python3 
 # interpreter and execute the script with it
 
-# Script Name:                  Ops Challenge: 401-16.py Automated Brute Force Wordlist Attack Tool Part 1 of 3
+# Script Name:                  Ops Challenge: 401-17.py Automated Brute Force Wordlist Attack Tool Part 1 of 3
 # Author:                       Ben Hobbs
-# Date of latest revision:      07/31/2023
+# Date of latest revision:      08/1/2023
 # Purpose:                      In Python, create a script that prompts the user to select one of the following modes:
 #                               Mode 1: Offensive; Dictionary Iterator
 #                               Accepts a user input word list file path and iterates through the word list, 
@@ -16,17 +16,25 @@
 #                               Accepts a user input word list file path.
 #                               Search the word list for the user input string.
 #                               Print to the screen whether the string appeared in the word list.
-
+#                               Add to your Python brute force tool the capability to:
+#                               Authenticate to an SSH server by its IP address.
+#                               Assume the username and IP are known inputs and 
+#                               attempt each word on the provided word list until successful login takes place.
+#                               Note: Stay out of trouble! Restrict this kind of traffic to your local network VMs.
+#                               Stretch Goals (Optional Objectives)
+#                                   Add to your Python brute force tool the capability to:
+#                                   Dump the user credential hashes of the victim system and print them to the screen.
 
 # References:
-# Demo code Class16
-# Marco Vasquez 401-Class16 topic intro 
+# Demo code Class17
+# Marco Vasquez 401-Class17 topic intro 
 # 
 
 # Import Libraries:
 import os
 import time
 import getpass
+import paramiko
 
 
 # Declaration of variables (Global):
