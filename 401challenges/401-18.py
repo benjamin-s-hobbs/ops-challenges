@@ -2,35 +2,23 @@
 # the shebang line instructs the system to use the env command to locate the python3 
 # interpreter and execute the script with it
 
-# Script Name:                  Ops Challenge: 401-17.py Automated Brute Force Wordlist Attack Tool Part 2 of 3
+# Script Name:                  Ops Challenge: 401-18.py Automated Brute Force Wordlist Attack Tool Part 3 of 3
 # Author:                       Ben Hobbs
-# Date of latest revision:      08/1/2023
-# Purpose:                      In Python, create a script that prompts the user to select one of the following modes:
-#                               Mode 1: Offensive; Dictionary Iterator
-#                               Accepts a user input word list file path and iterates through the word list, 
-#                               assigning the word being read to a variable.
-#                               Add a delay between words.
-#                               Print to the screen the value of the variable.
-#                               Mode 2: Defensive; Password Recognized
-#                               Accepts a user input string.
-#                               Accepts a user input word list file path.
-#                               Search the word list for the user input string.
-#                               Print to the screen whether the string appeared in the word list.
-
-#                               Add to your Python brute force tool the capability to:
-#                               Authenticate to an SSH server by its IP address.
-#                               Assume the username and IP are known inputs and 
-#                               attempt each word on the provided word list until successful login takes place.
-#                               Note: Stay out of trouble! Restrict this kind of traffic to your local network VMs.
-#                               Stretch Goals (Optional Objectives)
-#                                   Add to your Python brute force tool the capability to:
-#                                   Dump the user credential hashes of the victim system and print them to the screen.
+# Date of latest revision:      08/2/2023
+# Purpose:                      First, setup your target ZIP file.
+#                               Create a .txt file containing a secret message.
+#                               Follow the guide, How to Protect Zip file with Password, to archive the .txt 
+#                               file with password protection.
+#                               Next, add a new mode to your Python brute force tool that allows you to brute force 
+#                               attack a password-locked zip file.
+#                               Use the zipfile library.
+#                               Pass it the RockYou.txt list to test all words in the list against the password-locked zip file.
 
 # References:
-# Demo code Class17
-# Marco Vazquez 401-Class17 topic intro 
-# Marco Vazquez 401-Class18 review video (Zoom)
-# https://mohamedaezzat.github.io/posts/sshbruteforcer/ (Contributed by Rob G.)
+# Demo code Class18
+# Marco Vazquez 401-Class18 topic intro 
+# https://www.howtoforge.com/how-to-protect-zip-file-with-password-on-ubuntu-1804/
+# 
 
 # Import Libraries:
 import sys
@@ -41,6 +29,7 @@ import cryptography
 import paramiko
 import socket 
 import termcolor
+import zipfile 
 
 
 # Declaration of variables (Global):
@@ -49,8 +38,16 @@ import termcolor
 
 # Declaration of functions:
 
+# Write a function to attack a password-locked .zip file
+def attack_zip():
+    # Identify where the file you want to open is 
+    zip_lockd = input("What is the path to the .zip file that you'd like to open? \n")
+    # Pass your rockme.txt wordlist (or variant) to a variable
+    skel_key = input("/home/ben142/ops-challenges/401challenges/lilrockme.txt")
+    zipfile.ZipFile(zip_lockd, 'r')
 
 
+# Write a function to add a new mode to our menu
 
 # Write a function to accept input of a word list
 #def dict_iterator():
@@ -136,7 +133,7 @@ import termcolor
                 print("Invalid selection...I'm sorry, you must be at least 18 years old or at least know how numbers work to use this tool")
 
 # Main (call your functions)
-
+attack_zip()
 #BForce_tool()
 
 # End (end of script)
