@@ -53,7 +53,7 @@ import termcolor
 
 
 # Write a function to accept input of a word list
-#def dict_iterator():
+def dict_iterator():
     filepath = input("Enter your dictionary filepath:\n")
     # Iterate through the word list
     file = open(filepath, encoding = "ISO-8859-1")  # address encoding problem
@@ -74,7 +74,7 @@ import termcolor
 # Search the word list for the user input string.
 # Print the result of the search to the screen.
 
-#def check_password():
+def check_password():
     # Define a string to a variable
     usrpasswd = getpass("What password would you like to check? ")
     
@@ -114,7 +114,7 @@ import termcolor
                 strength = True
 
 # Write a function to combine these options into a user menu
-#def BForce_tool():
+def BForce_tool():
 #    if __name__ == "__main__": # when my computer runs this file...do this stuff
         while True:
             # Call the first function "Mode 1: Offensive; Dictionary Iterator"
@@ -137,6 +137,6 @@ import termcolor
 
 # Main (call your functions)
 
-#BForce_tool()
+BForce_tool()
 
 # End (end of script)
