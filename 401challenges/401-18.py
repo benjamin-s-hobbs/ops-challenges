@@ -43,35 +43,34 @@ def attack_zip():
     # Identify where the file you want to open is 
     zip_lockd = input("What is the path to the .zip file that you'd like to open? \n")
     # Pass your rockme.txt wordlist (or variant) to a variable
-    skel_key = input("/home/ben142/ops-challenges/401challenges/lilrockme.txt")
     zipfile.ZipFile(zip_lockd, 'r')
 
 
 # Write a function to add a new mode to our menu
 
 # Write a function to accept input of a word list
-#def dict_iterator():
-    filepath = input("Enter your dictionary filepath:\n")
-    # Iterate through the word list
-    file = open(filepath, encoding = "ISO-8859-1")  # address encoding problem
-    # Assign the word being read to a variable
-    line = file.readline()
-    while line:
-        line = line.rstrip()
-        word = line
-        # Print the value of the variable to the screen.
-        print(word)
-        # Add a delay between words (1 sec)
-        time.sleep(1)
-        line = file.readline()
-    file.close()
+#    def dict_iterator():
+#        filepath = input("Enter your dictionary filepath:\n")
+#        # Iterate through the word list
+#        file = open(filepath, encoding = "ISO-8859-1")  # address encoding problem
+#        # Assign the word being read to a variable
+#        line = file.readline()
+#        while line:
+#            line = line.rstrip()
+#            word = line
+#            # Print the value of the variable to the screen.
+#            print(word)
+#            # Add a delay between words (1 sec)
+#            time.sleep(1)
+#            line = file.readline()
+#        file.close()
 
 # Write a function to accept input of a string
 
 # Search the word list for the user input string.
 # Print the result of the search to the screen.
 
-#def check_password():
+def check_password():
     # Define a string to a variable
     usrpasswd = getpass("What password would you like to check? ")
     
