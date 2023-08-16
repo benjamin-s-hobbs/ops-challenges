@@ -57,14 +57,14 @@ p = sr1(IP(dst=host)/ICMP())
 if p:
     p.show()
 # 401-26: Create a log showing a single ping was sent.
-logging.basicConfig(filename="myscan.log", level=logging.INFO)
+logging.basicConfig(filename="myscan.log", format="%(asctime)s:%levelname)s:%message)s", level=logging.INFO)
 logging.info("Single ping packet sent")
 # Declaration of functions:
 
 # Write a function to test our specified range of ports (for loop)
 # Write a function to send a RST packet if 0x12 flag is received (to close the open connection)
 def scan_ports():
-    logging.basicConfig(filename="myscan.log", level=logging.INFO)
+    logging.basicConfig(filename="myscan.log", format="%(asctime)s:%levelname)s:%message)s", level=logging.INFO)
     # 401-26: Create a log that port scanning of xxx.xxx.xxx.xxx/xx has begun
     logging.info("port scan initiated on " + network_cidr)
     if (response.haslayer(TCP)):
@@ -98,7 +98,7 @@ def scan_ports():
 
 scan_ports()
 # 401-26: Create a log to show that the port scan is complete.
-logging.basicConfig(filename="myscan.log", level=logging.INFO)
+logging.basicConfig(filename="myscan.log", format="%(asctime)s:%levelname)s:%message)s", level=logging.INFO)
 logging.info("Scan has been completed")
 
 
