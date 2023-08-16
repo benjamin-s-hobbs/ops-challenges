@@ -22,6 +22,7 @@
 
 
 # Declaration of variables (Global):
+# Does your variable NEED to be global? (It probably does not)
 # How to declare a variable in python
 #   greeting = "Welcome to Python!"
 # How to call a variable

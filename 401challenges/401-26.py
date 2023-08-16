@@ -2,26 +2,27 @@
 # the shebang line instructs the system to use the env command to locate the python3 
 # interpreter and execute the script with it
 
-# Script Name:                  Ops Challenge: 401-26.py Automated Brute Force Wordlist Attack Tool Part 3 of 3
+# Script Name:                  Ops Challenge: 401-26.py Event Logging Tool Part 1 of 3
 # Author:                       Ben Hobbs
 # Date of latest revision:      08/14/2023
-# Purpose:                      
+# Purpose:                      First, visit Python Logging Tutorial and practice the Basic Logging Tutorial.
+#                               Next, review terminology at What Are stdin, stdout, and stderr on Linux? 
+#                               before visiting Logging Module in Python for some examples to get you started.
+#                               By now, you will have created several Python scripts in your public repo. 
+#                               Select one of your Python tools created during this class so far that does not have a logging feature. 
+#                               On that tool:
+#                               Add logging capabilities to your Python tool using the logging library.
+#                               Experiment with log types. Build in some error handling, then induce some errors. 
+#                               Send log data to a file in the local directory.
+#                               Confirm your logging feature is working as expected.
 
 # References:
-# Demo code Class18
-# Marco Vazquez 401-Class18 topic intro 
-# https://www.howtoforge.com/how-to-protect-zip-file-with-password-on-ubuntu-1804/
+# Demo code Class26
+# Marco Vazquez 401-Class26 topic intro 
+# Marco Vazquez 401-Class27 topic review 
 # 
 # Import Libraries:
-import sys
-import os
-import time
-from getpass import getpass
-import cryptography
-import paramiko
-import socket 
-import termcolor
-import zipfile 
+import logging
 
 
 # Declaration of variables (Global):
