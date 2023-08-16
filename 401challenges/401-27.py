@@ -19,9 +19,11 @@
 # Demo code Class27
 # Marco Vazquez 401-Class27 topic intro 
 # 401-11.py (NetworkSecurityToolScapy1)
-# 
+# https://www.blog.pythonlibrary.org/2014/02/11/python-how-to-create-rotating-logs/
+
 # Import Libraries:
 import logging
+from logging.handlers import RotatingFileHandler
 from scapy.all import sr1, TCP, ICMP, IP
 
 
@@ -58,6 +60,13 @@ if p:
 logging.basicConfig(filename="myscan.log", format="%(asctime)s:%levelname)s:%message)s", level=logging.INFO)
 logging.info("Single ping packet sent")
 # Declaration of functions:
+
+# Create a rotating log for port scans
+rotate_pscanlog = logging.getLogger("Rotating Log")
+rotate_pscanlog.setLevel(logging.info)
+
+# add a handler
+rotate_pscanlog_handle = RotatingFileHandler("~/ops-challenges/401challengeshandlelogs.txt/", maxBytes=25, backupCount=4)
 
 # Write a function to test our specified range of ports (for loop)
 # Write a function to send a RST packet if 0x12 flag is received (to close the open connection)
