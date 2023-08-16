@@ -53,9 +53,9 @@ response= sr1(IP(dst=host)/TCP(sport=scr_port,dport=dst_port,flags="S"),timeout=
 print(response)
 
 # sends a single ping and prints out the response packet
-#    p=sr1(IP(dst=host)/ICMP())
-#    if p:
-#        p.show()
+p=sr1(IP(dst=host)/ICMP())
+if p:
+    p.show()
 
 # Declaration of functions:
 
@@ -67,6 +67,7 @@ def scan_ports():
         if (response.getlayer(TCP).flags == 0x12):
             # Then the port is open. Send a RST packet to close it.
             send_rst = sr1(IP(dst=host)/TCP(sport=scr_port,dport=dst_port,flags="S"),timeout=1, verbose=0)
+            send_rst
             # Notify the user that the port is open.
             print(f"{host}:{dst_port} is open.")
             print(host + str(dst_port) + " is open.")
