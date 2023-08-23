@@ -24,12 +24,24 @@
 # 
 
 # Import Libraries:
-import os
+import os.walk 
 import hashlib
-
+import time 
+import cryptography
 # Declaration of variables (Global):
 
 # Declaration of functions:
+
+# Create a function to scan every file in every folder and print the result
+def malware_scan()
+    # pass the function of the scan into a variable for later use
+    deepscan = os.walk(input)
+
+    # pass the hashing of a file into a variable to call
+
+    # walk that hash variable on down using the deepscan
+
+    # Make sure to timestamp it
 
 
 # Main (calling functions):
