@@ -20,15 +20,17 @@
 # References:
 # Demo code Class32
 # Marco Vazquez 401-Class32 topic intro 
-# 
+# Raven (TA)
 # 
 
 # Import Libraries:
-# import os.walk 
-#import platform 
-#import hashlib
-#import time 
-#import cryptography
+
+import os.walk 
+import platform 
+import hashlib
+import time 
+import cryptography
+
 # Declaration of variables (Global):
 
 # Declaration of functions:
