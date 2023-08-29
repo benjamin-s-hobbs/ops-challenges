@@ -5,22 +5,21 @@
 # Script Name:                  Ops Challenge: 401-36.py 
 # Author:                       Ben Hobbs
 # Date of latest revision:      08/28/2023
-# Purpose:                      Ops Challenge: Signature-based Malware Detection Part 2 of 3
-#                               In Python, Continue developing your Python malware detection tool.
-#                               Alter your search code to recursively scan each file and folder in the user input directory path and print it to the screen.
-#                               For each file scanned within the scope of your search directory:
-#                               Generate the file’s MD5 hash using Hashlib.
-#                               Assign the MD5 hash to a variable.
-#                               Print the variable to the screen along with a timestamp, file name, file size, and complete (not relative) file path.
-#                               
-#                               TIP: You may need to bring in additional Python modules to complete today’s objective.
-#                               The script should be tested to execute successfully in Python3.
+# Purpose:                      Ops Challenge: Web Application Fingerprinting
+#                               For this lab you’ll need to develop and test your Python script from a Linux VM with the tools Nmap, Netcat, and Telnet installed. Generally speaking, Kali Linux is the recommendation for this challenge.
+#                               In Python create a script that executes from a Linux box to perform the following:
+#                               Prompts the user to type a URL or IP address.
+#                               Prompts the user to type a port number.
+#                               Performs banner grabbing using netcat against the target address at the target port; prints the results to the screen then moves on to the step below.
+#                               Performs banner grabbing using telnet against the target address at the target port; prints the results to the screen then moves on to the step below.
+#                               Performs banner grabbing using Nmap against the target address of all well-known ports; prints the results to the screen.
+.
 
 
 # References:
-# Demo code Class32
-# Marco Vazquez 401-Class32 topic intro 
-# Raven (TA)
+# Demo code Class36
+# Marco Vazquez 401-Class36 topic intro 
+# 
 # 
 
 # Import Libraries:
@@ -35,12 +34,31 @@ import time
 
 # Declaration of functions:
 
+# Function to request user input
+
+
+
 # Netcat function
 def netcat_scan(addr, port):
     #os.system("nc " + addr + " " + port)
     
     # Create a socket and a connection
-    socket1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    #socket1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Telnet function
+#def telnet_scan():
+    #os.system("nc " + addr + " " + port)
+    
+    # Create a socket and a connection
+    #socket1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# Nmap function
+#def nmap_scan():
+# Menu Function (using the above three functions as options)
+    #os.system("nc " + addr + " " + port)
+    
+    # Create a socket and a connection
+    #socket1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
 # Main (calling functions):
 
 
