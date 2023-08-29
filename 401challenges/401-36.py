@@ -50,7 +50,7 @@ def netcat_scan(addr, port):
     os.system("nc " + addr + " " + port)
     
     # Create a socket and a connection
-    socket1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    #socket1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Telnet function
 #def telnet_scan():
@@ -86,7 +86,7 @@ def netcat_scan(addr, port):
     #user_target = addr
     #port_target = port
 
-    bgrabber = input("\nWhat would you like to do? Please choose an option. \n 1) - Netcat Banner Grab \n 2) - Telnet Banner Grab  \n 3) - Nmap Banner Grab \n 4) - Exit \n Please enter a number: ")
+    #bgrabber = input("\nWhat would you like to do? Please choose an option. \n 1) - Netcat Banner Grab \n 2) - Telnet Banner Grab  \n 3) - Nmap Banner Grab \n 4) - Exit \n Please enter a number: ")
 #        if (bgrabber == "1"):
 #            netcat_scan()
 #            print("Now conducting netcat banner grab.")
@@ -114,4 +114,4 @@ def netcat_scan(addr, port):
 def netcat_scan(addr, port):
 
 
-# End (end of script)
+# End (end of script):
