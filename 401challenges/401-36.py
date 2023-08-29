@@ -25,7 +25,7 @@
 # Import Libraries:
 
 import os
-import system 
+import system
 import time
 import socket
 
@@ -50,64 +50,64 @@ def netcat_scan(addr, port):
     os.system("nc " + addr + " " + port)
     
     # Create a socket and a connection
-    #socket1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    socket1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Telnet function
-#def telnet_scan():
-    #global user_target
-    #global port_target
+def telnet_scan(addr, port):
+    global user_target
+    global port_target
 
-    #user_target = addr
-    #port_target = port
+    user_target = addr
+    port_target = port
 
-    #os.system("telnet " + addr + " " + port)
+    os.system("telnet " + addr + " " + port)
     
     # Create a socket and a connection
-    #socket1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    socket1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Nmap function
-#def nmap_scan():
-    #global user_target
-    #global port_target
+def nmap_scan(addr, port):
+    global user_target
+    global port_target
 
-    #user_target = addr
-    #port_target = port
+    user_target = addr
+    port_target = port
 
-    #os.system("nmap " + "-sV" + "-p"+ port + " " + addr)
+    os.system("nmap " + "-sV" + "-p"+ port + " " + addr)
     
     # Create a socket and a connection
-    #socket1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    socket1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Menu Function (using the above three functions as options)
-#def menu_bgrabber():
-    #global user_target
-    #global port_target
+def menu_bgrabber():
+    global user_target
+    global port_target
 
-    #user_target = addr
-    #port_target = port
+    user_target = addr
+    port_target = port
 
-    #bgrabber = input("\nWhat would you like to do? Please choose an option. \n 1) - Netcat Banner Grab \n 2) - Telnet Banner Grab  \n 3) - Nmap Banner Grab \n 4) - Exit \n Please enter a number: ")
-#        if (bgrabber == "1"):
-#            netcat_scan()
-#            print("Now conducting netcat banner grab.")
-#        elif (bgrabber == "2"):
-#            telnet_scan()
-#            print("Now conducting telnet banner grab.")
-#        elif (bgrabber == "3"):
-#            nmap_scan()
-#            print("Now conducting nmap banner grab.")
-#        elif (bgrabber == "4"):
-#            sys.exit
-#        else:
-#            print("Invalid Selection, self-destruct sequence activated...")
-#            time.sleep(2)
-#            print("3")
-#            time.sleep(2)
-#            print("2")
-#            time.sleep(2)
-#            print("1")
-#            time.sleep(2)
-#            print("goodbye")
+    bgrabber = input("\nWhat would you like to do? Please choose an option. \n 1) - Netcat Banner Grab \n 2) - Telnet Banner Grab  \n 3) - Nmap Banner Grab \n 4) - Exit \n Please enter a number: ")
+    if (bgrabber == "1"):
+        netcat_scan(addr, port)
+        print("Now conducting netcat banner grab.")
+    elif (bgrabber == "2"):
+        telnet_scan(addr, port)
+        print("Now conducting telnet banner grab.")
+    elif (bgrabber == "3"):
+        nmap_scan(addr, port)
+        print("Now conducting nmap banner grab.")
+    elif (bgrabber == "4"):
+        sys.exit
+    else:
+        print("Invalid Selection, self-destruct sequence activated...")
+        time.sleep(2)
+        print("3")
+        time.sleep(2)
+        print("2")
+        time.sleep(2)
+        print("1")
+        time.sleep(2)
+        print("goodbye")
 
 # Main (calling functions):
 
