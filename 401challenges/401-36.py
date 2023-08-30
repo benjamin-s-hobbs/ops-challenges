@@ -1,4 +1,4 @@
-#!/usr/bin/env/python3
+#!/usr/bin/python3
 # the shebang line instructs the system to use the env command to locate the python3 
 # interpreter and execute the script with it
 
@@ -20,7 +20,7 @@
 # Demo code Class36
 # Marco Vazquez 401-Class36 topic intro 
 # https://www.hackingarticles.in/multiple-ways-to-banner-grabbing/
-# 
+# # Marco Vazquez 401-Class37 topic review 
 
 # Import Libraries:
 
@@ -40,61 +40,65 @@ port_target = input("What port would you like to target? ")
 # Declaration of functions:
 
 # Netcat function to perform banner grabbing 
-def netcat_scan(addr, port):
+def netcat_scan(address, port):
     global user_target
     global port_target
 
-    user_target = addr
+    user_target = address
     port_target = port
 
-    os.system("nc " + addr + " " + port)
+    os.system("nc " + address + " " + port)
     
     # Create a socket and a connection
     socket1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
+    socket1.connect((address), int(port))
 # Telnet function
-def telnet_scan(addr, port):
+def telnet_scan(address, port):
     global user_target
     global port_target
 
-    user_target = addr
+    user_target = address
     port_target = port
 
-    os.system("telnet " + addr + " " + port)
+    os.system("telnet " + address + " " + port)
     
     # Create a socket and a connection
     socket1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
+    socket1.connect((address), int(port))
 # Nmap function
-def nmap_scan(addr, port):
+def nmap_scan(address, port):
     global user_target
     global port_target
 
-    user_target = addr
+    user_target = address
     port_target = port
 
-    os.system("nmap " + "-sV" + "-p"+ port + " " + addr)
-    
     # Create a socket and a connection
     socket1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    socket1.connect((address, int(port)))
+    
+    run = os.system("nmap " + "-sV" + "-p"+ port + " " + address)
+    
+    socket1.sendall(run.encode())
+    socket1.close
 
 # Menu Function (using the above three functions as options)
 def menu_bgrabber():
     global user_target
     global port_target
 
-    user_target = addr
+    user_target = address
     port_target = port
 
     bgrabber = input("\nWhat would you like to do? Please choose an option. \n 1) - Netcat Banner Grab \n 2) - Telnet Banner Grab  \n 3) - Nmap Banner Grab \n 4) - Exit \n Please enter a number: ")
     if (bgrabber == "1"):
-        netcat_scan(addr, port)
+        netcat_scan(address, port)
         print("Now conducting netcat banner grab.")
     elif (bgrabber == "2"):
-        telnet_scan(addr, port)
+        telnet_scan(address, port)
         print("Now conducting telnet banner grab.")
     elif (bgrabber == "3"):
-        nmap_scan(addr, port)
+        nmap_scan(address, port)
         print("Now conducting nmap banner grab.")
     elif (bgrabber == "4"):
         sys.exit
@@ -111,7 +115,7 @@ def menu_bgrabber():
 
 # Main (calling functions):
 
-def netcat_scan(addr, port):
+def menu_bgrabber():
 
 
-# End (end of script):
+# End(end of script):
