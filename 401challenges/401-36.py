@@ -87,9 +87,6 @@ def menu_bgrabber():
     global user_target
     global port_target
 
-    user_target = address
-    port_target = port
-
     bgrabber = input("\nWhat would you like to do? Please choose an option. \n 1) - Netcat Banner Grab \n 2) - Telnet Banner Grab  \n 3) - Nmap Banner Grab \n 4) - Exit \n Please enter a number: ")
     if (bgrabber == "1"):
         netcat_scan(address, port)
@@ -115,7 +112,7 @@ def menu_bgrabber():
 
 # Main (calling functions):
 
-def menu_bgrabber():
+menu_bgrabber():
 
 
 # End(end of script):

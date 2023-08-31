@@ -35,7 +35,7 @@ import platform
 # Declaration of functions:
 
 # Write a function to search each file in an identified directory (for Linux)
-def linuxSearch():
+def linux_Search():
 # Get user input for a filename to search
 # Get user input for a directory to search
     what_lxfile = input("What file are you looking for? ")
@@ -49,7 +49,7 @@ def linuxSearch():
 
 # Main (calling functions):
 
-def linuxSearch()
+linux_Search()
 
 
 # End (end of script)

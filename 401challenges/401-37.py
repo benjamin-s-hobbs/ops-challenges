@@ -53,10 +53,10 @@ def good_monster():
 
 # - Generate a .html file to capture the contents of the HTTP response
 def give_jar():
-
+    
 # - Open it with Firefox
 def open_mouth():
-    
+
 
 # Main (calling functions):
 
