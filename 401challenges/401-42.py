@@ -56,7 +56,6 @@ def tool_autonmap():
         print("Ip Status: ", scanner[ip_addr].state())
         print(scanner[ip_addr].all_protocols())
         print("Open Ports: ", scanner[ip_addr]['udp'].keys())
-                
     elif resp == '3':
         print("Nmap Version: ", scanner.nmap_version())
         scanner.scan(ip_addr, range, '-v -PR -A')
@@ -68,8 +67,6 @@ def tool_autonmap():
         print("Please enter a valid option")
         print("non-valid response entered")
         print("starting self-destruct sequence... ")
-
-
 
 # Main (calling functions):
 
